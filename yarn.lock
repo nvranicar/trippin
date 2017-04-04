@@ -3803,6 +3803,10 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
+leaflet@^0.7.7:
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-0.7.7.tgz#1e352ba54e63d076451fa363c900890cb2cf75ee"
+
 leek@0.0.24:
   version "0.0.24"
   resolved "https://registry.yarnpkg.com/leek/-/leek-0.0.24.tgz#e400e57f0e60d8ef2bd4d068dc428a54345dbcda"
