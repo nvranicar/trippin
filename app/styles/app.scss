@@ -58,6 +58,11 @@ a {
   background: $c-white;
   padding: 0.5rem;
   border-radius: 0.3rem;
+
+  &:hover {
+    color: $c-white;
+    background: $c-blue;
+  }
 }
 
 .login {
@@ -65,6 +70,11 @@ a {
   background: $c-white;
   padding: 0.5rem;
   border-radius: 0.3rem;
+
+  &:hover {
+    color: $c-white;
+    background: $c-green;
+  }
 }
 
 .section {
@@ -112,6 +122,11 @@ a {
   box-shadow: 0.1rem 0.1rem 0.1rem $c-shadow;
   background: rgba($c-blue, 0.3rem);
   max-height: 16rem;
+  width: 100%;
+
+  &__cover {
+    // flex-basis: 60%;
+  }
 
   &__pics {
     margin-left: 0.5rem;
