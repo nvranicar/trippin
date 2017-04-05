@@ -1,0 +1,64 @@
+<div class="section">
+  <div class="container">
+    <div class="map">
+      <h2 class="map__heading">Explore Through Others</h2>
+      <p><label>{{input type="checkbox" checked=topo}} Topographic</label></p>
+      {{#leaflet-map lat=lat lng=lng zoom=zoom}}
+
+        {{#if topo}}
+          {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664"}}
+        {{else}}
+          {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+        {{/if}}
+
+        {{#marker-layer location=ironYard}}
+          {{#popup-layer}}
+            <img src="https://pbs.twimg.com/profile_images/552955646346145793/DKlUDGsR.png" alt="">
+          {{/popup-layer}}
+        {{/marker-layer}}
+      {{/leaflet-map}}
+    </div>
+    <div class="trips">
+      <h2 class="trips__heading">Share Your View</h2>
+      <div class="trip">
+        <img src="http://fillmurray.com/200/200" class="trip__cover">
+        <div class="trip__pics">
+          <p class="chevron"><span class="fa fa-chevron-left"></span></p>
+          <div class="pic-grid">
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+          </div>
+          <p class="chevron"><span class="fa fa-chevron-right"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

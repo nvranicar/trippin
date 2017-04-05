@@ -1,17 +1,16 @@
 .section {
   padding: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 60rem;
 
   &--register {
     background: linear-gradient(rgba($c-blue, 0.3), rgba($c-blue, 0.3)), url('/images/map-background.jpg');
     background-size: cover;
     height: 100vh;
   }
-}
-
-.container {
-  max-width: 60rem;
-  margin: 0 auto;
-  height: 100vh;
 }
 
 .flex-center {
