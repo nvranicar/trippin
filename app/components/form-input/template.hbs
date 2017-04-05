@@ -1,0 +1,9 @@
+<div>
+  <input type="{{type}}" value="{{get changeset property}}" oninput={{action (mut (get changeset property)) value="target.value"}} placeholder="{{label}}" class="input input__register">
+
+  <ul class="errors">
+    {{#each (get (get changeset.error property) 'validation') as |error|}}
+      <li>{{error}}</li>
+    {{/each}}
+  </ul>
+</div>
