@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+img {
+  align-self: center;
+  max-width: 100%;
+}
+
+.section {
+  padding: 1rem;
+
+  &__register {
+    background: url('/images/map-background.jpg');
+    background-size: cover;
+    height: 100vh;
+  }
+}
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
