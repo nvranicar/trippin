@@ -1,7 +1,9 @@
 $c-blue: rgb(68, 151, 232);
-$c-green: rgb(88, 232, 158);
+$c-green: rgb(69,193,129);
+$c-greenLightened: lighten($c-green, 8);
 $c-cyan: rgb(109, 254, 255);
 $c-deepBlue: rgb(48,50,175);
+$c-deepBlueLightened: lighten($c-deepBlue, 8);
 $c-lightGreen: rgb(155, 255, 150);
 $c-white: #fefefe;
 
@@ -10,20 +12,28 @@ $c-white: #fefefe;
 .flex-center {
   display: flex;
   justify-content: center;
+  align-items: center;
+    height: 100vh;
+
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba($c-blue, 0.3);
-  padding: 2rem;
+  justify-content: space-around;
+  // transform: translate(0, 50%);
+  background: rgba($c-white, 0.7);
+  padding: 2rem 5rem;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .title {
   margin: 0;
   padding: 1rem;
+  color: #3d3d3d;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 3rem;
 }
 
 .form {
@@ -31,18 +41,63 @@ $c-white: #fefefe;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 }
 
 .card-content {
-  // display: flex;
-  // flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .input {
   margin: 0.5rem 0;
-  background: rgba($c-blue, 0.3);
-  width: 100%;
+  padding: 0.5rem;
+  background: rgba(80, 80, 80, 0.3);
   outline: none;
   border: none;
+  line-height: 1rem;
+  font-size: 0.9rem;
+  color: #505050;
+
+  &:focus {
+    border-bottom: 1px solid $c-deepBlue;
+    transition: linear 0.3s;
+  }
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+a.button {
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  background: $c-green;
+  border-radius: 0.4rem;
+  color: $c-white;
+  font-size: 1rem;
+
+  &:hover {
+    border-radius: 0.4rem;
+    background: $c-greenLightened;
+  }
+}
+
+button.button {
+  padding: 0.5rem 1rem;
+  border: 0;
+  background: $c-deepBlue;
+  border-radius: 0.4rem;
+  color: $c-white;
+  font-size: 1rem;
+
+  &:hover {
+    border-radius: 0.4rem;
+    background: $c-deepBlueLightened;
+  }
 }
