@@ -1,22 +1,20 @@
-<div class="section section__register">
+<div class="section section--register">
   <div class="container">
     <div class="flex-center">
-      <div class="card">
-        <div class="card-header">
-          <h1 class="title title__register">
-            Start Trippin'
-          </h1>
-        </div>
+      <div class="card card--small">
+        <h1 class="card__title">
+          Start Trippin'
+        </h1>
         {{#with (changeset model userValidator) as |formValues|}}
-        <form {{action "saveUser" formValues on="submit"}} class="form form__register">
-          <div class="card-content">
+        <form {{action "saveUser" formValues on="submit"}} class="form form--register">
+          <div class="card__content">
             {{form-input changeset=formValues label="Username" property="username"}}
             {{form-input changeset=formValues label="Email" property="email"}}
             {{form-input type="password" changeset=formValues label="Password" property="password"}}
           </div>
-          <div class="card-footer">
-            {{#link-to "index" class="button button__register"}}Back{{/link-to}}
-            <button class="button button__register">Continue</button>
+          <div class="card__footer">
+            {{#link-to "index" class="button button--back"}}Back{{/link-to}}
+            <button class="button button--submit">Continue</button>
           </div>
         </form>
         {{/with}}

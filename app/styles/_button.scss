@@ -1,0 +1,23 @@
+button.button, a.button {
+  border: 0;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  background: rgba($c-green, 0.8);
+  border-radius: 0.4rem;
+  color: $c-white;
+  font-size: 1rem;
+  text-align: center;
+
+  &:hover {
+    border-radius: 0.4rem;
+    background: rgba($c-greenLightened, 0.8);
+  }
+
+  &--back {
+    background: rgba($c-deepBlue, 0.8);
+
+    &:hover {
+      background: rgba($c-deepBlueLightened, 0.8);
+    }
+  }
+}
