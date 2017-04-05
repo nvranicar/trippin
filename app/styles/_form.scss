@@ -1,0 +1,25 @@
+.form {
+  &--register {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: rgba(80, 80, 80, 0.3);
+  outline: none;
+  border: none;
+  border-bottom: 0.1rem solid transparent;
+  width: 100%;
+  line-height: 1rem;
+  font-size: 0.9rem;
+  color: #505050;
+  transition: border-bottom-color linear 0.3s;
+
+  &:focus {
+    border-bottom-color: $c-deepBlue;
+  }
+}

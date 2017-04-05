@@ -1,19 +1,24 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
+  font-family: sans-serif;
 }
 
 ul {
-  padding-left: none;
   list-style: none;
+  padding-left: 0;
 }
 
 img {
+  align-self: center;
   max-width: 100%;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: sans-serif;
 }
 
 a {

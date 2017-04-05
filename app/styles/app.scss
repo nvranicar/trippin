@@ -1,18 +1,24 @@
 @import "ember-cli-font-awesome-sass";
 
+
 $c-blue: rgb(68, 151, 232);
-$c-green: rgb(88, 232, 158);
-$c-deepGreen: rgb(53,162,73);
+$c-green: rgb(69,193,129);
+$c-deepGreen: darken($c-green, 15%);
+$c-greenLightened: lighten($c-green, 8);
 $c-cyan: rgb(109, 254, 255);
 $c-deepBlue: rgb(48,50,175);
+$c-deepBlueLightened: lighten($c-deepBlue, 8);
 $c-lightGreen: rgb(155, 255, 150);
 $c-white: #fefefe;
 $c-shadow: rgba(#5b5b5b,.47);
 
-@import './resets.scss';
+@import 'resets';
+@import 'layout';
 
-@import './navbar.scss';
+@import 'form';
+@import 'button';
+@import 'card';
 
-@import './layout.scss';
+@import 'navbar';
 
-@import './home-page.scss';
+@import 'home-page';
