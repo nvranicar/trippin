@@ -1,8 +1,14 @@
 <div class="section">
   <div class="container">
     <div class="map">
+      <p><label>{{input type="checkbox" checked=topo}} Topographic</label></p>
       {{#leaflet-map lat=lat lng=lng zoom=zoom}}
-        {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+
+        {{#if topo}}
+          {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664"}}
+        {{else}}
+          {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+        {{/if}}
 
         {{#marker-layer location=ironYard}}
           {{#popup-layer}}
