@@ -7,6 +7,7 @@ $c-deepBlueLightened: lighten($c-deepBlue, 8);
 $c-lightGreen: rgb(155, 255, 150);
 $c-white: #fefefe;
 @import 'resets';
+// @import 'register';
 
 .flex-center {
   display: flex;
@@ -56,6 +57,7 @@ $c-white: #fefefe;
   outline: none;
   border: none;
   border-bottom: 0.1rem solid transparent;
+  width: 100%;
   line-height: 1rem;
   font-size: 0.9rem;
   color: #505050;
@@ -76,27 +78,27 @@ $c-white: #fefefe;
 a.button {
   padding: 0.5rem 2rem;
   text-decoration: none;
-  background: $c-green;
+  background: rgba($c-green, 0.8);
   border-radius: 0.4rem;
   color: $c-white;
   font-size: 1rem;
 
   &:hover {
     border-radius: 0.4rem;
-    background: $c-greenLightened;
+    background: rgba($c-greenLightened, 0.8);
   }
 }
 
 button.button {
   padding: 0.5rem 1rem;
   border: 0;
-  background: $c-deepBlue;
+  background: rgba($c-deepBlue, 0.8);
   border-radius: 0.4rem;
   color: $c-white;
   font-size: 1rem;
 
   &:hover {
     border-radius: 0.4rem;
-    background: $c-deepBlueLightened;
+    background: rgba($c-deepBlueLightened, 0.8);
   }
 }

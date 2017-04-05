@@ -7,17 +7,19 @@
             Start Trippin'
           </h1>
         </div>
-        <form class="form form__register">
+        {{#with (changeset model userValidator) as |formValues|}}
+        <form {{action "saveUser" formValues on="submit"}} class="form form__register">
           <div class="card-content">
-            <input type="text" placeholder="username" class="input input__register">
-            <input type="text" placeholder="email" class="input input__register">
-            <input type="password" placeholder="password" class="input input__register">
+            {{form-input changeset=formValues label="Username" property="username"}}
+            {{form-input changeset=formValues label="Email" property="email"}}
+            {{form-input type="password" changeset=formValues label="Password" property="password"}}
           </div>
           <div class="card-footer">
-            <a href="/" class="button button__register">Back</a>
+            {{#link-to "index" class="button button__register"}}Back{{/link-to}}
             <button class="button button__register">Continue</button>
           </div>
         </form>
+        {{/with}}
       </div>
     </div>
   </div>
