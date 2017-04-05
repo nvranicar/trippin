@@ -6,14 +6,13 @@ $c-deepBlue: rgb(48,50,175);
 $c-deepBlueLightened: lighten($c-deepBlue, 8);
 $c-lightGreen: rgb(155, 255, 150);
 $c-white: #fefefe;
-
 @import 'resets';
 
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
-    height: 100vh;
+  height: 100vh;
 
 }
 
@@ -22,7 +21,6 @@ $c-white: #fefefe;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  // transform: translate(0, 50%);
   background: rgba($c-white, 0.7);
   padding: 2rem 5rem;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -57,13 +55,14 @@ $c-white: #fefefe;
   background: rgba(80, 80, 80, 0.3);
   outline: none;
   border: none;
+  border-bottom: 0.1rem solid transparent;
   line-height: 1rem;
   font-size: 0.9rem;
   color: #505050;
+  transition: border-bottom-color linear 0.3s;
 
   &:focus {
-    border-bottom: 1px solid $c-deepBlue;
-    transition: linear 0.3s;
+    border-bottom-color: $c-deepBlue;
   }
 }
 
