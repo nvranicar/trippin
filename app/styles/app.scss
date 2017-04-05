@@ -1,0 +1,45 @@
+$c-blue: rgb(68, 151, 232);
+$c-green: rgb(88, 232, 158);
+$c-cyan: rgb(109, 254, 255);
+$c-deepBlue: rgb(48,50,175);
+$c-lightGreen: rgb(155, 255, 150);
+$c-white: #fefefe;
+
+body {
+  margin: 0;
+}
+
+ul {
+  padding-left: none;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-bar {
+  color: $c-white;
+  background: $c-deepBlue;
+  padding: 0.5rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 65rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
