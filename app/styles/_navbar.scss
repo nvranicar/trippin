@@ -1,0 +1,51 @@
+.top-bar {
+  color: $c-white;
+  background: $c-deepBlue;
+  padding: 0.1rem;
+}
+
+.logo {
+  max-width: 7rem;
+}
+
+.footer {
+  height: 2rem;
+  background: $c-deepBlue;
+}
+
+.login-buttons {
+  > * + * {
+    margin-left: 0.5rem;
+  }
+}
+
+.register {
+  color: $c-deepBlue;
+  background: $c-white;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+
+  &:hover {
+    color: $c-white;
+    background: $c-blue;
+  }
+}
+
+.login {
+  color: $c-deepGreen;
+  background: $c-white;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+
+  &:hover {
+    color: $c-white;
+    background: $c-green;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+}
