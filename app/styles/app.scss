@@ -1,9 +1,13 @@
+@import "ember-cli-font-awesome-sass";
+
 $c-blue: rgb(68, 151, 232);
 $c-green: rgb(88, 232, 158);
+$c-deepGreen: rgb(53,162,73);
 $c-cyan: rgb(109, 254, 255);
 $c-deepBlue: rgb(48,50,175);
 $c-lightGreen: rgb(155, 255, 150);
 $c-white: #fefefe;
+$c-shadow: rgba(#5b5b5b,.47);
 
 body {
   margin: 0;
@@ -31,7 +35,36 @@ a {
 .top-bar {
   color: $c-white;
   background: $c-deepBlue;
+  padding: 0.1rem;
+}
+
+.logo {
+  max-width: 7rem;
+}
+
+.footer {
+  height: 2rem;
+  background: $c-deepBlue;
+}
+
+.login-buttons {
+  > * + * {
+    margin-left: 0.5rem;
+  }
+}
+
+.register {
+  color: $c-deepBlue;
+  background: $c-white;
   padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.login {
+  color: $c-deepGreen;
+  background: $c-white;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
 }
 
 .section {
@@ -46,20 +79,25 @@ a {
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 1rem;
 }
 
 .map {
   margin: 1rem;
+
+  &__heading {
+    text-align: center;
+  }
 }
 
 .leaflet-container {
   height: 80vh;
   width: 100%;
+  box-shadow: 0.1rem 0.1rem 0.1rem $c-shadow;
 }
 
 .trips {
-  background: $c-blue;
   height: 100vh;
   margin: 1rem;
 
@@ -71,18 +109,33 @@ a {
 .trip {
   display: flex;
   padding: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem $c-shadow;
+  background: rgba($c-blue, 0.3rem);
+  max-height: 16rem;
 
   &__pics {
     margin-left: 0.5rem;
+    display: flex;
+    width: 100%;
   }
 }
 
 .pic-grid {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  overflow: scroll;
+  width: 100%;
 
   &__item {
-    flex-basis: calc(16% - 1rem);
+    flex-basis: calc(50% - 1rem);
     margin: 0.5rem;
+    min-width: 7rem;
   }
+}
+
+.chevron {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
