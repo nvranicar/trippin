@@ -34,6 +34,10 @@ a {
   padding: 0.5rem;
 }
 
+.section {
+  padding: 1rem;
+}
+
 .container {
   margin: 0 auto;
   max-width: 65rem;
@@ -42,4 +46,45 @@ a {
 .nav {
   display: flex;
   justify-content: space-between;
+  margin: 0 1rem;
+}
+
+.map {
+  background: $c-green;
+  height: 80vh;
+  margin: 1rem;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.trips {
+  background: $c-blue;
+  height: 100vh;
+  margin: 1rem;
+
+  &__heading {
+    text-align: center;
+  }
+}
+
+.trip {
+  display: flex;
+  padding: 0.5rem;
+
+  &__pics {
+    margin-left: 0.5rem;
+  }
+}
+
+.pic-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex-basis: calc(16% - 1rem);
+    margin: 0.5rem;
+  }
 }

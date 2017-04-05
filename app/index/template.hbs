@@ -1,0 +1,46 @@
+<div class="section">
+  <div class="container">
+    <div class="map">
+      {{#leaflet-map lat=lat lng=lng zoom=zoom}}
+        {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+
+        {{#marker-layer location=ironYard}}
+          {{#popup-layer}}
+            <img src="https://pbs.twimg.com/profile_images/552955646346145793/DKlUDGsR.png" alt="">
+          {{/popup-layer}}
+        {{/marker-layer}}
+      {{/leaflet-map}}
+    </div>
+    <div class="trips">
+      <h2 class="trips__heading">Share Your View</h2>
+      <div class="trip">
+        <img src="http://fillmurray.com/200/200" class="trip__cover">
+        <div class="trip__pics">
+          <div class="pic-grid">
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+            <div class="pic-grid__item">
+              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
