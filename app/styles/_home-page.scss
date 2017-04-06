@@ -30,7 +30,7 @@
   width: 100%;
 
   &__cover {
-    // flex-basis: 60%;
+    width: 15rem;
   }
 
   &__pics {
@@ -46,11 +46,12 @@
   flex-direction: column;
   overflow: scroll;
   width: 100%;
+  height: 100%;
 
   &__item {
-    flex-basis: calc(50% - 1rem);
+    height: calc(50% - 1rem);
     margin: 0.5rem;
-    min-width: 7rem;
+    flex-grow: 0;
   }
 }
 
@@ -58,4 +59,37 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.pic-wrapper {
+  width: 100%;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.small-pic {
+  max-width: 7rem;
+  max-height: 7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pic-button {
+  background: none;
+  border:none;
+  outline: none;
+}
+
+.no-pics {
+  text-align: center;
 }
