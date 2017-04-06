@@ -6,7 +6,9 @@ button.button, a.button {
   border-radius: 0.4rem;
   color: $c-white;
   font-size: 1rem;
+  font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
+  outline: none;
 
   &:hover {
     border-radius: 0.4rem;

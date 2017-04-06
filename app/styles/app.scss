@@ -6,10 +6,11 @@ $c-green: rgb(69,193,129);
 $c-deepGreen: darken($c-green, 15%);
 $c-greenLightened: lighten($c-green, 8);
 $c-cyan: rgb(109, 254, 255);
-$c-deepBlue: rgb(48,50,175);
+$c-deepBlue: rgb(1,17,75);
 $c-deepBlueLightened: lighten($c-deepBlue, 8);
 $c-lightGreen: rgb(155, 255, 150);
 $c-white: #fefefe;
+$c-text: rgb(61,61,61);
 $c-shadow: rgba(#5b5b5b,.47);
 
 @import 'resets';

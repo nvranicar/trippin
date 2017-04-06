@@ -6,9 +6,11 @@ html {
   box-sizing: inherit;
 }
 
+
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $c-text;
 }
 
 ul {
