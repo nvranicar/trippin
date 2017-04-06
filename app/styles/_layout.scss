@@ -1,6 +1,7 @@
 .app {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .section {
@@ -14,7 +15,7 @@
   &--register {
     background: linear-gradient(rgba(227,186,149, 0.3), rgba(227,186,149, 0.3)), url('/images/map-background.jpg');
     background-size: cover;
-    // min-height: 100vh;
+    // min-height: 100%;
   }
 
   &--login {

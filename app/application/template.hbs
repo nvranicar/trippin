@@ -1,21 +1,23 @@
-<div class="top-bar">
-  <div class="container">
-    <div class="nav">
-      <div class="nav-left">
-        <span>
-          {{#link-to "index"}} <img src="/images/trippin-logo.png" class="logo"> {{/link-to}}
-        </span>
-      </div>
-      <div class="nav-right">
-        <h4 class="login-buttons">
-          {{#link-to "register"}}<span class="register">Register</span>{{/link-to}}
-          {{#link-to "login"}}<span class="login">Login</span>{{/link-to}}
-        </h4>
+<div class="app">
+  <div class="top-bar">
+    <div class="container">
+      <div class="nav">
+        <div class="nav-left">
+          <span>
+            {{#link-to "index"}} <img src="/images/trippin-logo.png" class="logo"> {{/link-to}}
+          </span>
+        </div>
+        <div class="nav-right">
+          <h4 class="login-buttons">
+            {{#link-to "register"}}<span class="register">Register</span>{{/link-to}}
+            {{#link-to "login"}}<span class="login">Login</span>{{/link-to}}
+          </h4>
+        </div>
       </div>
     </div>
   </div>
+
+  {{outlet}}
+
+  <footer class="footer"></footer>
 </div>
-
-{{outlet}}
-
-<div class="footer"></div>
