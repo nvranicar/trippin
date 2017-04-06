@@ -1,0 +1,28 @@
+<div class="app">
+  <div class="section section--login">
+    <div class="container">
+      <div class="flex-center">
+        <div class="card card--small">
+          <h1 class="card__title">
+            Keep Trippin'
+          </h1>
+          {{#with (changeset model userValidator) as |formValues|}}
+          <form {{action "loginUser" formValues on="submit"}} class="form form--register">
+            <div class="card__content">
+              {{form-input changeset=formValues label="Username" property="username"}}
+              {{form-input type="password" changeset=formValues label="Password" property="password"}}
+            </div>
+            <div class="card__footer">
+              {{#link-to "index" class="button button--back"}}Home{{/link-to}}
+              <button class="button button--submit">Continue</button>
+            </div>
+          </form>
+          {{/with}}
+          <p>
+            Need an account? {{#link-to "register" class="text-blue"}}Register here!{{/link-to}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

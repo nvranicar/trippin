@@ -1,21 +1,35 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
 .section {
   padding: 1rem;
+  flex: 1;
+
+  &--index {
+    background: #6b6b6b;
+  }
+
+  &--register {
+    background: linear-gradient(rgba(227,186,149, 0.3), rgba(227,186,149, 0.3)), url('/images/map-background.jpg');
+    background-size: cover;
+    // min-height: 100vh;
+  }
+
+  &--login {
+    background: url('/images/cool-waterfall.jpg');
+    background-size: cover;
+  }
 }
 
 .container {
   margin: 0 auto;
   max-width: 60rem;
-
-  &--register {
-    background: linear-gradient(rgba($c-blue, 0.3), rgba($c-blue, 0.3)), url('/images/map-background.jpg');
-    background-size: cover;
-    height: 100vh;
-  }
 }
 
 .flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
