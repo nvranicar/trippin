@@ -10,10 +10,10 @@ export default Ember.Controller.extend({
   data,
 
   actions: {
-    zoomByLoc(trip) {
-      Ember.set(this, 'lat', trip.crd[0]);
-      Ember.set(this, 'lng', trip.crd[1]);
-      Ember.set(this, 'zoom', 5);
+     zoomByLoc(trip) {
+       Ember.set(this, 'lat', trip.crd[0]);
+       Ember.set(this, 'lng', trip.crd[1]);
+       Ember.set(this, 'zoom', 5);
     }
   }
 });

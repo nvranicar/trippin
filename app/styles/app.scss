@@ -22,24 +22,3 @@ $c-shadow: rgba(#5b5b5b,.47);
 @import 'navbar';
 
 @import 'home-page';
-
-.map-pic {
-  background: $c-shadow;
-  margin: -0.85rem -1.25rem;
-  border-radius: 0.75rem;
-  padding: 0.5rem;
-
-  > * + * {
-    margin-top: -1rem;
-  }
-
-  &__location {
-    margin: -0.4rem 0 -1rem;
-  }
-
-  &__pic {
-    border-radius: 0.5rem;
-    margin-bottom: -0.3rem;
-    width: 6rem;
-  }
-}

@@ -14,7 +14,7 @@
           {{#marker-layer location=trip.crd}}
             {{#popup-layer}}
               <div class="map-pic">
-                <h5 class="map-pic__location">{{trip.location}}</h5>
+                <h4 class="map-pic__location">{{trip.location}}</h4>
                 <p class="map-pic__user">by {{trip.user}}</p>
                 <img src={{trip.cover}} class="map-pic__pic">
               </div>
@@ -30,7 +30,6 @@
       <div class="trip">
         <div class="trip__cover">
           <h4>{{trip.location}}</h4>
-          <p>by {{trip.user}}</p>
           <button class="pic-button" {{action "zoomByLoc" trip}}><img src={{trip.cover}} class="trip__cover__pic"></button>
         </div>
         <div class="trip__pics">
@@ -45,7 +44,9 @@
             </div>
             {{/each}}
             {{else}}
-            <p class="no-pics">No trips found for this location.</p>
+            <div class="no-pics-wrapper">
+              <p class="no-pics">No trips found for this location.</p>
+            </div>
             {{/if}}
           </div>
           <p class="chevron"><span class="fa fa-chevron-right"></span></p>
