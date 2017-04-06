@@ -1,15 +1,9 @@
-<div class="section">
+<div class="section section--map">
   <div class="container">
     <div class="map">
-      <h2 class="map__heading">Explore Through Others</h2>
-      <p><label>{{input type="checkbox" checked=topo}} Topographic</label></p>
+      <h1 class="map__heading">Explore Through Others</h1>
       {{#leaflet-map lat=lat lng=lng zoom=zoom}}
-
-        {{#if topo}}
           {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664"}}
-        {{else}}
-          {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
-        {{/if}}
 
         {{#marker-layer location=ironYard}}
           {{#popup-layer}}
