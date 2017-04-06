@@ -19,3 +19,17 @@
   align-items: center;
   height: 100vh;
 }
+
+.app {
+  min-height: 100%;
+  margin-bottom: -2rem;
+
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+.footer, .app:after {
+  height: 2rem;
+}
