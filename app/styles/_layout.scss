@@ -46,3 +46,17 @@
   display: flex;
   justify-content: center;
 }
+
+.app {
+  min-height: 100%;
+  margin-bottom: -2rem;
+
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+.footer, .app:after {
+  height: 2rem;
+}

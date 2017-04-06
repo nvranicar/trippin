@@ -10,6 +10,17 @@
             <img src="https://pbs.twimg.com/profile_images/552955646346145793/DKlUDGsR.png" alt="">
           {{/popup-layer}}
         {{/marker-layer}}
+        {{#each data.trips as |trip|}}
+          {{#marker-layer location=trip.crd}}
+            {{#popup-layer}}
+              <div class="map-pic">
+                <h4 class="map-pic__location">{{trip.location}}</h4>
+                <p class="map-pic__user">by {{trip.user}}</p>
+                <img src={{trip.cover}} class="map-pic__pic">
+              </div>
+            {{/popup-layer}}
+          {{/marker-layer}}
+        {{/each}}
       {{/leaflet-map}}
     </div>
   </div>
@@ -18,45 +29,34 @@
   <div class="container">
     <div class="trips">
       <h2 class="trips__heading">Share Your View</h2>
+      <p>(click on a location's picture to view on map)</p>
+      {{#each data.trips as |trip|}}
       <div class="trip">
-        <img src="http://fillmurray.com/200/200" class="trip__cover">
+        <div class="trip__cover">
+          <h4>{{trip.location}}</h4>
+          <button class="pic-button" {{action "zoomByLoc" trip}}><img src={{trip.cover}} class="trip__cover__pic"></button>
+        </div>
         <div class="trip__pics">
           <p class="chevron"><span class="fa fa-chevron-left"></span></p>
           <div class="pic-grid">
+            {{#if trip.pictures}}
+            {{#each trip.pictures as |pic|}}
             <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+              <div class="pic-wrapper">
+                <img src={{pic}} class="small-pic">
+              </div>
             </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+            {{/each}}
+            {{else}}
+            <div class="no-pics-wrapper">
+              <p class="no-pics">No trips found for this location.</p>
             </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
+            {{/if}}
           </div>
           <p class="chevron"><span class="fa fa-chevron-right"></span></p>
         </div>
       </div>
+      {{/each}}
     </div>
   </div>
 </div>
