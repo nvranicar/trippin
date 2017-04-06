@@ -2,63 +2,56 @@
   <div class="container">
     <div class="map">
       <h2 class="map__heading">Explore Through Others</h2>
-      <p><label>{{input type="checkbox" checked=topo}} Topographic</label></p>
       {{#leaflet-map lat=lat lng=lng zoom=zoom}}
-
-        {{#if topo}}
           {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664"}}
-        {{else}}
-          {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
-        {{/if}}
 
         {{#marker-layer location=ironYard}}
           {{#popup-layer}}
             <img src="https://pbs.twimg.com/profile_images/552955646346145793/DKlUDGsR.png" alt="">
           {{/popup-layer}}
         {{/marker-layer}}
+        {{#each data.trips as |trip|}}
+          {{#marker-layer location=trip.crd}}
+            {{#popup-layer}}
+              <div class="map-pic">
+                <h5 class="map-pic__location">{{trip.location}}</h5>
+                <p class="map-pic__user">by {{trip.user}}</p>
+                <img src={{trip.cover}} class="map-pic__pic">
+              </div>
+            {{/popup-layer}}
+          {{/marker-layer}}
+        {{/each}}
       {{/leaflet-map}}
     </div>
     <div class="trips">
       <h2 class="trips__heading">Share Your View</h2>
+      <p>(click on a location's picture to view on map)</p>
+      {{#each data.trips as |trip|}}
       <div class="trip">
-        <img src="http://fillmurray.com/200/200" class="trip__cover">
+        <div class="trip__cover">
+          <h4>{{trip.location}}</h4>
+          <p>by {{trip.user}}</p>
+          <button class="pic-button" {{action "zoomByLoc" trip}}><img src={{trip.cover}} class="trip__cover__pic"></button>
+        </div>
         <div class="trip__pics">
           <p class="chevron"><span class="fa fa-chevron-left"></span></p>
           <div class="pic-grid">
+            {{#if trip.pictures}}
+            {{#each trip.pictures as |pic|}}
             <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
+              <div class="pic-wrapper">
+                <img src={{pic}} class="small-pic">
+              </div>
             </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
-            <div class="pic-grid__item">
-              <img src="http://fillmurray.com/100/100" alt="" class="small-pic">
-            </div>
+            {{/each}}
+            {{else}}
+            <p class="no-pics">No trips found for this location.</p>
+            {{/if}}
           </div>
           <p class="chevron"><span class="fa fa-chevron-right"></span></p>
         </div>
       </div>
+      {{/each}}
     </div>
   </div>
 </div>
