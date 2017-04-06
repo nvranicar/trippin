@@ -1,15 +1,17 @@
 .app {
   display: flex;
   flex-direction: column;
-  // height: 100vh;
+  height: 100vh;
 
   &__content {
+    flex-basis: 0;
     flex-grow: 1;
   }
 }
 
 .section {
   padding: 1rem;
+  height: 100%;
 
   &--map {
     background:rgba(227,186,149, 0.1);
@@ -43,5 +45,4 @@
 .flex-center {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
