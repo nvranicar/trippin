@@ -2082,13 +2082,6 @@ ember-cli-font-awesome-sass@^1.0.4:
   dependencies:
     ember-cli-babel "^5.1.6"
 
-ember-cli-font-awesome@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/ember-cli-font-awesome/-/ember-cli-font-awesome-1.5.2.tgz#d8a911c274c7ba0fe70171ae15983f782c52d507"
-  dependencies:
-    ember-cli-babel "^5.1.5"
-    ember-computed-decorators "0.2.2"
-
 ember-cli-get-component-path-option@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-get-component-path-option/-/ember-cli-get-component-path-option-1.0.0.tgz#0d7b595559e2f9050abed804f1d8eff1b08bc771"
@@ -2353,12 +2346,6 @@ ember-composability-tools@0.0.8:
     ember-getowner-polyfill "1.1.1"
     ember-wormhole "0.5.1"
 
-ember-computed-decorators@0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/ember-computed-decorators/-/ember-computed-decorators-0.2.2.tgz#7c934a575c55ac3a18b6aaeb7cd2cbe149bc9b34"
-  dependencies:
-    ember-cli-babel "^5.1.5"
-
 ember-cookies@^0.0.12:
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/ember-cookies/-/ember-cookies-0.0.12.tgz#aba3a4a2c36f856e0bba35a4ecf6a58f8950eb9c"
@@ -2399,6 +2386,12 @@ ember-export-application-global@^2.0.0:
   resolved "https://registry.yarnpkg.com/ember-export-application-global/-/ember-export-application-global-2.0.0.tgz#8d6d7619ac8a1a3f8c43003549eb21ebed685bd2"
   dependencies:
     ember-cli-babel "^6.0.0-beta.7"
+
+ember-filesystem@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/ember-filesystem/-/ember-filesystem-0.2.2.tgz#48e2d47161a7df63d9e5a29ebd23d604d703af55"
+  dependencies:
+    ember-cli-babel "^5.1.6"
 
 ember-font-awesome@^3.0.5:
   version "3.0.5"
