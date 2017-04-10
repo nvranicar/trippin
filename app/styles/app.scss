@@ -11,7 +11,7 @@ $c-deepBlueLightened: lighten($c-deepBlue, 8);
 $c-lightGreen: rgb(155, 255, 150);
 $c-white: #fefefe;
 $c-text: rgb(61,61,61);
-$c-shadow: rgba(#5b5b5b,.47);
+$c-shadow: rgba(0, 0, 0, .2);
 
 @import 'resets';
 @import 'layout';
@@ -23,3 +23,4 @@ $c-shadow: rgba(#5b5b5b,.47);
 @import 'navbar';
 
 @import 'home-page';
+@import 'user-info';
