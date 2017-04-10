@@ -33,8 +33,8 @@
       {{#each data.trips as |trip|}}
       <div class="trip">
         <div class="trip__cover">
-          <h4>{{trip.location}}</h4>
-          <button class="pic-button" {{action "zoomByLoc" trip}}><img src={{trip.cover}} class="trip__cover__pic"></button>
+            <img src={{trip.cover}} class="trip__cover__pic">
+          <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.location}}</button>
         </div>
         <div class="trip__pics">
           <p class="chevron"><span class="fa fa-chevron-left"></span></p>
