@@ -8,12 +8,17 @@ export default Ember.Controller.extend({
   topo: true,
   ironYard: [36.152706, -86.776111],
   data,
+  scroller: Ember.inject.service(),
 
   actions: {
      zoomByLoc(trip) {
        Ember.set(this, 'lat', trip.crd[0]);
        Ember.set(this, 'lng', trip.crd[1]);
        Ember.set(this, 'zoom', 5);
+       this.get('scroller').scrollVertical('.map');
     },
+    scroll(trip) {
+      this.get('scroller').scrollVertical(`.${trip.id}`);
+    }
   }
 });

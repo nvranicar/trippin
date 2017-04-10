@@ -1,6 +1,7 @@
 export default {
   "trips": [
     {
+      "id": 1,
       "cover": "https://www.oneandonlyresorts.com/-/media/oneandonly/reethi-rah/about/793x634/one-and-only-reethi-rah-maldives-location.jpg?v1",
       "location": "Maldives",
       "user": "Nathan",
@@ -14,12 +15,14 @@ export default {
       ]
     },
     {
+      "id": 2,
       "cover": "https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5297426881001_5280178297001-vs.jpg?pubId=5104226627001&videoId=5280178297001",
       "location": "New Zealand",
       "user": "Evan",
       "crd": [-41.28664, 174.77557]
     },
     {
+      "id": 3,
       "cover": "https://s-media-cache-ak0.pinimg.com/originals/b2/4c/35/b24c35c4c1995fbe44d2459d6aa11506.jpg",
       "location": "Patagonia",
       "user": "Matt",

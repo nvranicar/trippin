@@ -14,7 +14,9 @@
           {{#marker-layer location=trip.crd}}
             {{#popup-layer}}
               <div class="map-pic">
-                <h4 class="map-pic__location">{{trip.location}}</h4>
+                <button class="scrollBtn" {{action "scroll" trip}}>
+                  <h4 class="map-pic__location">{{trip.location}}</h4>
+                </button>
                 <p class="map-pic__user">by {{trip.user}}</p>
                 <img src={{trip.cover}} class="map-pic__pic">
               </div>
@@ -31,29 +33,31 @@
       <h2 class="trips__heading">Share Your View</h2>
       <p>(click on a location's picture to view on map)</p>
       {{#each data.trips as |trip|}}
-      <div class="trip">
-        <div class="trip__cover">
-            <img src={{trip.cover}} class="trip__cover__pic">
-          <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.location}}</button>
-        </div>
-        <div class="trip__pics">
-          <p class="chevron"><span class="fa fa-chevron-left"></span></p>
-          <div class="pic-grid">
-            {{#if trip.pictures}}
-            {{#each trip.pictures as |pic|}}
-            <div class="pic-grid__item">
-              <div class="pic-wrapper">
-                <img src={{pic}} class="small-pic">
-              </div>
-            </div>
-            {{/each}}
-            {{else}}
-            <div class="no-pics-wrapper">
-              <p class="no-pics">No trips found for this location.</p>
-            </div>
-            {{/if}}
+      <div class={{trip.id}}>
+        <div class="trip">
+          <div class="trip__cover">
+              <img src={{trip.cover}} class="trip__cover__pic">
+            <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.location}}</button>
           </div>
-          <p class="chevron"><span class="fa fa-chevron-right"></span></p>
+          <div class="trip__pics">
+            <p class="chevron"><span class="fa fa-chevron-left"></span></p>
+            <div class="pic-grid">
+              {{#if trip.pictures}}
+              {{#each trip.pictures as |pic|}}
+              <div class="pic-grid__item">
+                <div class="pic-wrapper">
+                  <img src={{pic}} class="small-pic">
+                </div>
+              </div>
+              {{/each}}
+              {{else}}
+              <div class="no-pics-wrapper">
+                <p class="no-pics">No trips found for this location.</p>
+              </div>
+              {{/if}}
+            </div>
+            <p class="chevron"><span class="fa fa-chevron-right"></span></p>
+          </div>
         </div>
       </div>
       {{/each}}
