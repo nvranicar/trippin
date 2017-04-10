@@ -17,20 +17,24 @@
     background-size: cover;
   }
 
+  &--index {
+    background: #6b6b6b;
+  }
+
   &--register {
     height: 100%;
     background: linear-gradient(rgba(227,186,149, 0.3), rgba(227,186,149, 0.3)), url('/images/map-background.jpg') no-repeat center fixed;
     background-size: cover;
   }
 
-  &--index {
-    background: #6b6b6b;
-  }
-
   &--login {
     height: 100%;
     background: url('/images/cool-waterfall.jpg') ;
     background-size: cover;
+  }
+
+  &--form {
+    height: 100%;
   }
 }
 

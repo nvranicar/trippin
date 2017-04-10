@@ -1,6 +1,6 @@
 .map {
   padding: 1rem;
-  box-shadow: 0.1rem 0.1rem 0.1rem $c-shadow;
+  box-shadow: 0.2rem 0.2rem 0.1rem $c-shadow;
   background: rgb(129,120,111);
   border-radius: 0.2rem;
 
@@ -10,6 +10,7 @@
     padding-bottom: 1rem;
     color: $c-white;
     text-align: center;
+    text-shadow: 0.2rem 0.2rem 0.1rem $c-shadow;
   }
 }
 
