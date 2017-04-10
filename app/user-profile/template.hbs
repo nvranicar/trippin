@@ -35,10 +35,12 @@
     </div>
   </div>
 </div>
+
+
 <div class="section section--index">
   <div class="container">
     <div class="trips">
-      <h2 class="trips__heading">Share Your View</h2>
+      {{outlet}}
       <p>(click on a location's picture to view on map)</p>
       {{#each data.trips as |trip|}}
         <div class="trip">
@@ -70,5 +72,3 @@
     </div>
   </div>
 </div>
-
-{{outlet}}
