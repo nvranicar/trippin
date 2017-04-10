@@ -2049,6 +2049,12 @@ ember-cli-babel@^6.0.0-beta.3, ember-cli-babel@^6.0.0-beta.7, ember-cli-babel@^6
     clone "^2.0.0"
     ember-cli-version-checker "^1.2.0"
 
+ember-cli-bootstrap-datepicker@^0.5.6:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/ember-cli-bootstrap-datepicker/-/ember-cli-bootstrap-datepicker-0.5.6.tgz#efa86a5d4a8b6883ee749c9bd50e1f70f17fe0a5"
+  dependencies:
+    ember-cli-babel "^5.1.5"
+
 ember-cli-broccoli-sane-watcher@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/ember-cli-broccoli-sane-watcher/-/ember-cli-broccoli-sane-watcher-2.0.4.tgz#f43f42f75b7509c212fb926cd9aea86ae19264c6"
@@ -2386,6 +2392,12 @@ ember-export-application-global@^2.0.0:
   resolved "https://registry.yarnpkg.com/ember-export-application-global/-/ember-export-application-global-2.0.0.tgz#8d6d7619ac8a1a3f8c43003549eb21ebed685bd2"
   dependencies:
     ember-cli-babel "^6.0.0-beta.7"
+
+ember-filesystem@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/ember-filesystem/-/ember-filesystem-0.2.2.tgz#48e2d47161a7df63d9e5a29ebd23d604d703af55"
+  dependencies:
+    ember-cli-babel "^5.1.6"
 
 ember-font-awesome@^3.0.5:
   version "3.0.5"

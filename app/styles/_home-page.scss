@@ -1,20 +1,28 @@
 .map {
-  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.1rem $c-shadow;
+  background: rgb(129,120,111);
+  border-radius: 0.2rem;
+
 
   &__heading {
+    margin: 0;
+    padding-bottom: 1rem;
+    color: $c-white;
     text-align: center;
+    text-shadow: 0.2rem 0.2rem 0.1rem $c-shadow;
   }
 }
 
 .leaflet-container {
   height: 80vh;
   width: 100%;
-  box-shadow: 0.1rem 0.1rem 0.1rem $c-shadow;
+  box-shadow: -0.1rem -0.1rem 0.1rem 0;
 }
 
 .trips {
-  height: 100vh;
-  margin: 1rem;
+  height: 100%;
+  // margin: 1rem;
 
   &__heading {
     text-align: center;
@@ -31,6 +39,9 @@
 
   &__cover {
     width: 15rem;
+    position: relative;
+    color: $c-deepBlue;
+    cursor: pointer;
   }
 
   &__pics {
@@ -38,6 +49,10 @@
     display: flex;
     width: 100%;
   }
+}
+
+.cover-text {
+
 }
 
 .pic-grid {

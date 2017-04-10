@@ -11,16 +11,9 @@
 
 .section {
   padding: 1rem;
-  height: 100%;
 
   &--map {
-    background:rgba(227,186,149, 0.1);
-    background-size: cover;
-  }
-
-  &--register {
-    // padding: 4.75rem;
-    background: linear-gradient(rgba(227,186,149, 0.3), rgba(227,186,149, 0.3)), url('/images/map-background.jpg') no-repeat center fixed;
+    background: url('/images/home-background.jpg');
     background-size: cover;
   }
 
@@ -28,12 +21,20 @@
     background: #6b6b6b;
   }
 
-
+  &--register {
+    height: 100%;
+    background: linear-gradient(rgba(227,186,149, 0.3), rgba(227,186,149, 0.3)), url('/images/map-background.jpg') no-repeat center fixed;
+    background-size: cover;
+  }
 
   &--login {
-    // padding: 6.8rem;
+    height: 100%;
     background: url('/images/cool-waterfall.jpg') ;
     background-size: cover;
+  }
+
+  &--form {
+    height: 100%;
   }
 }
 
@@ -47,16 +48,6 @@
   justify-content: center;
 }
 
-.app {
-  min-height: 100%;
-  margin-bottom: -2rem;
-
-  &:after {
-    content: "";
-    display: block;
-  }
-}
-
-.footer, .app:after {
+.footer {
   height: 2rem;
 }

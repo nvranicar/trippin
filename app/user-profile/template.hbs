@@ -1,0 +1,75 @@
+<div class="section section--map">
+  <div class="container">
+    <div class="map">
+      <div class="user-info">
+        <div class="user-info__pic">
+          <img src="http://www.fillmurray.com/200/200" alt="" class="user-avatar">
+        </div>
+        <div class="user-info__content">
+          <h1 class="user-info__title">Username</h1>
+          <p class="user-info__title">Followed by X travelers</p>
+          <p class="user-info__title">Following X travelers</p>
+        </div>
+      </div>
+      {{#leaflet-map lat=lat lng=lng zoom=zoom}}
+        {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664"}}
+
+        {{#marker-layer location=ironYard}}
+          {{#popup-layer}}
+            <img src="https://pbs.twimg.com/profile_images/552955646346145793/DKlUDGsR.png" alt="">
+          {{/popup-layer}}
+        {{/marker-layer}}
+        {{#each data.trips as |trip|}}
+          {{#marker-layer location=trip.crd}}
+            {{#popup-layer}}
+              <div class="map-pic">
+                <h4 class="map-pic__location">{{trip.location}}</h4>
+                <p class="map-pic__user">by {{trip.user}}</p>
+                <img src= {{trip.cover}} class="map-pic__pic">
+              </div>
+            {{/popup-layer}}
+          {{/marker-layer}}
+        {{/each}}
+      {{/leaflet-map}}
+    </div>
+  </div>
+</div>
+
+<div class="section section--index">
+  <div class="container">
+    <div class="trips">
+
+      {{outlet}}
+
+      <div class="trip-wrapper">
+        {{#each data.trips as |trip|}}
+          <div class="trip">
+            <div class="trip__cover">
+              <button class="pic-button" {{action "zoomByLoc" trip}}><img src={{trip.cover}} class="trip__cover__pic"></button>
+              <h4 class="cover-text">{{trip.location}}</h4>
+            </div>
+            <div class="trip__pics">
+              <p class="chevron"><span class="fa fa-chevron-left"></span></p>
+              <div class="pic-grid">
+                {{#if trip.pictures}}
+                  {{#each trip.pictures as |pic|}}
+                    <div class="pic-grid__item">
+                      <div class="pic-wrapper">
+                        <img src= {{pic}} class="small-pic">
+                      </div>
+                    </div>
+                  {{/each}}
+                {{else}}
+                  <div class="no-pics-wrapper">
+                    <p class="no-pics">No trips found for this location.</p>
+                  </div>
+                {{/if}}
+              </div>
+              <p class="chevron"><span class="fa fa-chevron-right"></span></p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
