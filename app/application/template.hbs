@@ -1,4 +1,3 @@
-
 <div class="app">
   <div class="top-bar">
     {{!-- <div class="container"> --}}
@@ -10,8 +9,17 @@
         </div>
         <div class="nav-right">
           <h4 class="login-buttons">
+            {{#if isAuthenticated}}
+            <div class="dropdown">
+              <span class="fa fa-bars"></span>
+              <div class="dropdown-content">
+                <button class="logout" {{action "logout"}}>Logout</button>
+              </div>
+            </div>
+            {{else}}
             {{#link-to "register"}}<span class="register">Register</span>{{/link-to}}
             {{#link-to "login"}}<span class="login">Login</span>{{/link-to}}
+            {{/if}}
           </h4>
         </div>
       </div>
