@@ -3,9 +3,9 @@
 
 module.exports = function(environment) {
   let ENV = {
-    // DS: {
-    //
-    // },
+    DS: {
+
+    },
 
     modulePrefix: 'trippin',
     environment,
