@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
   zoom: 2,
   topo: true,
   ironYard: [36.152706, -86.776111],
+  bounds: [[-89.98155760646617, -180], [89.99346179538875, 180]],
   data,
   scroller: Ember.inject.service(),
 
