@@ -1,33 +1,39 @@
 <div class="section section--form">
   <div class="container">
     <div class="card card--log-trip">
-      <h2 class="card__title">
-            Log Your Trip
-          </h2>
-      <form {{action "saveTrip" on="submit"}} class="form form--log-trip">
+      <h2 class="card__title"> Log Your Trip </h2>
+      {{#with (changeset model) as |formValues|}}
+
+      <form {{action "saveTrip" formValues on="submit"}} class="form form--log-trip">
         <div class="card__content">
-          <label for="name">What are you calling this trip?</label>
-          {{input type="text" value="formValues.name" class="input input__log-trip"}}
+          <label for="name">What are you calling this trip?</label> {{input type="text" value=formValues.name class="input input__log-trip"}}
 
-          <label for="friends">Who are your travel buddies? (Optional)</label>
-          <input type="text" class="input input__log-trip">
+          <label for="friends">Who are your travel buddies? (Optional)</label> {{input type="text" value=formValues.friends class="input input__log-trip"}}
 
-          <label for="locations">Location(s):</label>
-          <input type="text" class="input input__log-trip">
+          <label for="locations">Location(s):</label> {{input type="text" value=formValues.locations class="input input__log-trip"}}
 
-          <label for="dates">Date(s):</label> {{bootstrap-datepicker autoclose=true value=startDate format='DD.MM.YYYY' class="form-control input input__log-trip"}} {{startDate}}
+          <label for="dates">Date(s):</label>
+          {{#basic-dropdown as |dropdown|}}
+            <input type="text" data-ebd-id="{{dropdown.uniqueId}}-trigger" class="input input__log-trip" onclick={{dropdown.actions.toggle}} value={{if formValues.dates (moment-format formValues.dates 'DD-MM-YYYY')}} readonly>
+
+            {{#dropdown.content class="datepicker-demo-dropdown" }}
+              {{#power-calendar class="demo-calendar-small" center=center onCenterChange=(action (mut center) value="date" ) selected=formValues.dates onSelect=(action (mut formValues.dates) value="date" ) as |calendar|}}
+                {{calendar.nav}} {{calendar.days}}
+              {{/power-calendar}}
+            {{/dropdown.content}}
+          {{/basic-dropdown}}
 
           <label for="details">Trip Details:</label>
-          <textarea name="details" id="" cols="30" rows="10" class="input input__log-trip"></textarea>
+          <textarea name="details" id="" cols="30" rows="10" value=formValues.details class="input input__log-trip"></textarea>
 
-          <label for="add-photos">Add Photos:</label>
-          <input type="file" class="input-padding">
+          <label for="add-photos">Add Photos:</label> {{input type="file" class="input-padding"}}
         </div>
         <div class="card__footer">
-          {{#link-to "user-profile" class="button button--back" }}Cancel{{/link-to}}
+          {{#link-to "user-profile" class="button button--back"}}Cancel{{/link-to}}
           <button type="submit" class="button button--submit">Save</button>
         </div>
       </form>
+      {{/with}}
     </div>
   </div>
 </div>

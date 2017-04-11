@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
 
       await trip.save();
 
-      this.transitionToRoute('');
+      this.transitionToRoute('/user-profile');
     }
   }
 });
