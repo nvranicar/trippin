@@ -43,38 +43,6 @@
 
       {{outlet}}
 
- feature/home-page
-      <div class="trip-wrapper">
-        {{#each data.trips as |trip|}}
-          <div class={{trip.id}}>
-            <div class="trip">
-              <div class="trip__cover">
-                <img src={{trip.cover}} class="trip__cover__pic">
-                <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.location}}</button>
-              </div>
-              <div class="trip__pics">
-                <p class="chevron"><span class="fa fa-chevron-left"></span></p>
-                <div class="pic-grid">
-                  {{#if trip.pictures}}
-                    {{#each trip.pictures as |pic|}}
-                      <div class="pic-grid__item">
-                        <div class="pic-wrapper">
-                          <img src={{pic}} class="small-pic">
-                        </div>
-                      </div>
-                    {{/each}}
-                  {{else}}
-                    <div class="no-pics-wrapper">
-                      <p class="no-pics">No trips found for this location.</p>
-                    </div>
-                  {{/if}}
-                </div>
-                <p class="chevron"><span class="fa fa-chevron-right"></span></p>
-              </div>
-            </div>
-          </div>
-        {{/each}}
-      </div>
     </div>
   </div>
 </div>
