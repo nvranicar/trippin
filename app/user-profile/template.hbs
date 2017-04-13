@@ -11,8 +11,8 @@
           <p class="user-info__title">Following X travelers</p>
         </div>
       </div>
-      {{#leaflet-map lat=lat lng=lng zoom=zoom scrollWheelZoom=false zoomAnimation=true minZoom=zoom}}
-        {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664"}}
+      {{#leaflet-map maxBounds=bounds lat=lat lng=lng zoom=zoom scrollWheelZoom=false zoomAnimation=true minZoom=2}}
+        {{tile-layer bounds=bounds url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664"}}
 
         {{#marker-layer location=ironYard}}
           {{#popup-layer}}

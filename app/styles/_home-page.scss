@@ -106,9 +106,12 @@
   transition: background 1s;
 
   &:hover {
-    background: none;
     cursor: pointer;
   }
+}
+
+.pic-button:hover .favorite {
+  display: block;
 }
 
 .small-pic {
@@ -170,4 +173,33 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.trip__cover:hover .favorite {
+  color: $c-white;
+
+  &:hover {
+    color: $c-favoriteHover;
+  }
+}
+
+.favorite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: rgba(#fff,0);
+  transition: color 0.5s;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.trip__cover:hover .pic-button {
+  background: none;
 }
