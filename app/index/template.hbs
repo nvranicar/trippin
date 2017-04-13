@@ -39,11 +39,7 @@
             <div class="trip__cover">
               <img src={{trip.cover}} class="trip__cover__pic">
               <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.location}}</button>
-              {{#if (array-contains favorites 'trip')}}
-              <button class="favorited" {{action "unfavorite" trip}}><span class="fa fa-star"></span></button>
-              {{else}}
-              <button class="favorite" {{action "favorite" trip}}><span class="fa fa-star-o"></span></button>
-              {{/if}}
+              {{!-- <button class="favorite" {{action "favorite" trip}}><span class="fa fa-star-o"></span></button> --}}
             </div>
             <div class="trip__pics">
               <p class="chevron"><span class="fa fa-chevron-left"></span></p>

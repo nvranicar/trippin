@@ -12,7 +12,6 @@ export default Ember.Controller.extend({
   currentUser: {
       favorites: []
   },
-  favorites: [...this.currentUser.favorites],
 
   actions: {
      zoomByLoc(trip) {
@@ -23,13 +22,6 @@ export default Ember.Controller.extend({
     },
     scroll(trip) {
       this.get('scroller').scrollVertical(`.${trip.id}`);
-    },
-    contains(trip) {
-      if (this.currentUser.favorites.find(trip)) {
-        return true;
-      } else {
-        return false;
-      }
     },
     favorite(trip) {
       this.currentUser.favorites.push(trip);
