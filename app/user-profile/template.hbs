@@ -7,8 +7,8 @@
         </div>
         <div class="user-info__content">
           <h1 class="user-info__title">Bill_Murray65</h1>
-          <p class="user-info__title">Followed by X travelers</p>
-          <p class="user-info__title">Following X travelers</p>
+          {{!-- <p class="user-info__title">Followed by X travelers</p>
+          <p class="user-info__title">Following X travelers</p> --}}
         </div>
       </div>
       {{#leaflet-map maxBounds=bounds lat=lat lng=lng zoom=zoom scrollWheelZoom=false zoomAnimation=true minZoom=2}}
@@ -43,6 +43,7 @@
 
       {{outlet}}
 
+ feature/home-page
       <div class="trip-wrapper">
         {{#each data.trips as |trip|}}
           <div class={{trip.id}}>
