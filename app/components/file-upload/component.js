@@ -10,9 +10,9 @@ export default EmberUploader.FileField.extend({
       url: this.get('url')
     });
 
-    if (!Ember.isEmpty(files)) {
-      // this second argument is optional and can to be sent as extra data with the upload
-      uploader.upload(files, { whatheverObject });
-    }
+    // if (!Ember.isEmpty(files)) {
+    //   // this second argument is optional and can to be sent as extra data with the upload
+    //   uploader.upload(files, { whatheverObject });
+    // }
   }
 });

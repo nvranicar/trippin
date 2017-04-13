@@ -26,7 +26,7 @@
           <label for="details">Trip Details:</label>
           <textarea name="details" id="" cols="30" rows="10" value=formValues.details class="input input__log-trip"></textarea>
 
-          <label for="add-photos">Add Photos:</label> {{file-upload type="file" class="input-padding"}}
+          <label for="add-photos">Add Photos:</label> {{file-upload type="file" id="file-field" class="input-padding" filesDidChange=(action (mut formValues.images))}}
         </div>
         <div class="card__footer">
           {{#link-to "user-profile" class="button button--back"}}Cancel{{/link-to}}
