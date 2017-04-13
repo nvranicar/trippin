@@ -1187,7 +1187,7 @@ broccoli-config-replace@^1.1.2:
     debug "^2.2.0"
     fs-extra "^0.24.0"
 
-broccoli-file-creator@^1.0.0, broccoli-file-creator@^1.1.1:
+broccoli-file-creator@^1.0.0, broccoli-file-creator@^1.0.1, broccoli-file-creator@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/broccoli-file-creator/-/broccoli-file-creator-1.1.1.tgz#1b35b67d215abdfadd8d49eeb69493c39e6c3450"
   dependencies:
@@ -2064,12 +2064,6 @@ ember-cli-babel@^6.0.0-alpha.9, ember-cli-babel@^6.0.0-beta.3, ember-cli-babel@^
     clone "^2.0.0"
     ember-cli-version-checker "^1.2.0"
 
-ember-cli-bootstrap-datepicker@^0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/ember-cli-bootstrap-datepicker/-/ember-cli-bootstrap-datepicker-0.5.6.tgz#efa86a5d4a8b6883ee749c9bd50e1f70f17fe0a5"
-  dependencies:
-    ember-cli-babel "^5.1.5"
-
 ember-cli-broccoli-sane-watcher@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/ember-cli-broccoli-sane-watcher/-/ember-cli-broccoli-sane-watcher-2.0.4.tgz#f43f42f75b7509c212fb926cd9aea86ae19264c6"
@@ -2668,6 +2662,14 @@ ember-try@^0.2.11:
     rsvp "^3.0.17"
     semver "^5.1.0"
     sync-exec "^0.6.2"
+
+ember-uploader@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/ember-uploader/-/ember-uploader-1.2.3.tgz#7e8bf0d8c2d1f4298d8c78189ecb11a8d0ad49dc"
+  dependencies:
+    broccoli-file-creator "^1.0.1"
+    broccoli-merge-trees "^1.0.0"
+    ember-cli-babel "^5.1.6"
 
 ember-welcome-page@^3.0.0:
   version "3.0.0"

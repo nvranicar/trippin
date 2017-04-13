@@ -26,8 +26,9 @@ export default Ember.Controller.extend({
 
     async saveTrip() {
       const trip = this.store.createRecord('trip', this.formValues);
-      await trip.save();
-      this.transitionToRoute('/user-profile.index');
+      await trip.save().then(() => {
+        this.transitionToRoute('/user-profile.index');
+      })
     },
 
     changeMe(d) {

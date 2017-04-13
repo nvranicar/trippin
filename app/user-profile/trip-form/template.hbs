@@ -26,18 +26,11 @@
           <label for="details">Trip Details:</label>
           <textarea name="details" id="" cols="30" rows="10" value=formValues.details class="input input__log-trip"></textarea>
 
-          <label for="add-photos">Add Photos:</label>
-          {{#each selectedFiles as |file|}}
-            <p>{{file.name}}</p>
-          {{/each}}
-
-          {{log selectedFiles}}
-
-          {{file-picker action=(action (mut selectedFiles))}}
+          <label for="add-photos">Add Photos:</label> {{file-upload type="file" class="input-padding"}}
         </div>
         <div class="card__footer">
           {{#link-to "user-profile" class="button button--back"}}Cancel{{/link-to}}
-          <button  {{action "upload saveTrip" uploadFile}} type="submit" class="button button--submit">Save</button>
+          <button type="submit" class="button button--submit">Save</button>
         </div>
       </form>
       {{/with}}
