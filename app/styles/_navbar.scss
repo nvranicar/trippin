@@ -19,6 +19,18 @@
   }
 }
 
+.my-profile-link {
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  transition: background 0.5s, color 0.5s;
+
+  &:hover {
+    color: $c-deepBlue;
+    background: $c-white;
+  }
+}
+
 .register {
   color: $c-deepBlue;
   background: $c-white;

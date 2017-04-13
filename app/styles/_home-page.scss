@@ -37,13 +37,14 @@
   width: 100%;
 
   &__cover {
-    width: 20rem;
+    max-width: 20rem;
     position: relative;
-    height: auto;
+    height: 15rem;
     cursor: pointer;
 
     &__pic {
       height: 100%;
+      width: 100%;
     }
   }
 
@@ -104,11 +105,13 @@
   height: 100%;
   transition: background 1s;
 
-
   &:hover {
-    background: none;
     cursor: pointer;
   }
+}
+
+.pic-button:hover .favorite {
+  display: block;
 }
 
 .small-pic {
@@ -170,4 +173,33 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.trip__cover:hover .favorite {
+  color: $c-white;
+
+  &:hover {
+    color: $c-favoriteHover;
+  }
+}
+
+.favorite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: rgba(#fff,0);
+  transition: color 0.5s;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+.trip__cover:hover .pic-button {
+  background: none;
 }

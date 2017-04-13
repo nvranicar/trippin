@@ -2,8 +2,8 @@
   <div class="container">
     <div class="map">
       <h1 class="map__heading">Explore Through Others</h1>
-      {{#leaflet-map lat=lat lng=lng zoom=zoom}}
-          {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664"}}
+      {{#leaflet-map lat=lat lng=lng zoom=zoom scrollWheelZoom=false minZoom=2 maxBounds=bounds}}
+          {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664" bounds=bounds}}
 
         {{#marker-layer location=ironYard}}
           {{#popup-layer}}
@@ -39,6 +39,7 @@
             <div class="trip__cover">
               <img src={{trip.cover}} class="trip__cover__pic">
               <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.location}}</button>
+              {{!-- <button class="favorite" {{action "favorite" trip}}><span class="fa fa-star-o"></span></button> --}}
             </div>
             <div class="trip__pics">
               <p class="chevron"><span class="fa fa-chevron-left"></span></p>

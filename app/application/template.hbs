@@ -10,6 +10,7 @@
         <div class="nav-right">
           <h4 class="login-buttons">
             {{#if isAuthenticated}}
+            {{#link-to "user-profile"}}<span class="my-profile-link">My Profile</span>{{/link-to}}
             <div class="dropdown">
               <span class="fa fa-bars"></span>
               <div class="dropdown-content">
