@@ -28,6 +28,8 @@ export default Ember.Controller.extend({
       }).then(res => res.json()).then((data) => {
         const upload = this.store.pushPayload(data);
       });
+
+      this.transitionToRoute('user-profile');
     },
 
     changeMe(d) {
