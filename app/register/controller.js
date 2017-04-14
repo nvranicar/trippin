@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
 
       await user.save();
 
-      this.transitionToRoute('profile');
+      this.transitionToRoute('user-profile');
     }
   }
 });
