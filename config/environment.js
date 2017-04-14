@@ -4,7 +4,7 @@
 module.exports = function(environment) {
   let ENV = {
     DS: {
-      host: 'localhost:8080',
+      host: 'http://localhost:8080',
     },
 
     modulePrefix: 'trippin',
