@@ -23,11 +23,12 @@ export default Ember.Controller.extend({
     scroll(trip) {
       this.get('scroller').scrollVertical(`.${trip.id}`);
     },
-    favorite(trip) {
-      this.currentUser.favorites.push(trip);
+    favorite(pic) {
+      if (this.currentUser.favorites.includes(pic)) {
+        this.currentUser.favorites.removeObject(pic);
+      } else {
+        this.currentUser.favorites.pushObject(pic);
+      }
     },
-    unfavorite(trip) {
-      this.currentUser.favorites.splice(trip);
-    }
   }
 });
