@@ -48,9 +48,16 @@
                 <div class="pic-grid__item">
                   <div class="pic-wrapper">
                     <img src={{pic}} class="small-pic">
+                    <button class="modal-button" {{action "toggleModal"}}></button>
                     <button class="favorite {{if (contains pic currentUser.favorites) "favorite--active"}}" {{action "favorite" pic}}> <span class="fa {{if (contains pic currentUser.favorites) "fa-star" "fa-star-o"}}"></span> </button>
                   </div>
                 </div>
+                {{#if isShowingModal}}
+                  {{#modal-dialog close="toggleModal"}}
+                    <img src={{pic}}>
+                    <p>By {{trip.user}}</p>
+                  {{/modal-dialog}}
+                {{/if}}
                 {{/each}}
                 {{else}}
                 <div class="no-pics-wrapper">
