@@ -26,7 +26,7 @@ export default Ember.Controller.extend({
       Ember.set(this, 'lat', trip.crd[0]);
       Ember.set(this, 'lng', trip.crd[1]);
       Ember.set(this, 'zoom', 5);
-      this.get('scroller').scrollVertical('.map');
+      this.get('scroller').scrollVertical('.leaflet-container');
     },
     scroll(trip) {
       this.get('scroller').scrollVertical(`.${trip.id}`);
