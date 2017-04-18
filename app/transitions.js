@@ -7,10 +7,10 @@ export default function(){
   );
   this.transition(
     this.fromRoute('user-profile.index'),
-    this.toRoute('user-profile.trip-form'),
     this.use('toDown'),
     this.reverse('toUp')
   );
+
   // this.transition(
   //   this.fromRoute('register'),
   //   this.toRoute('login'),

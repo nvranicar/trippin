@@ -12,6 +12,7 @@ Router.map(function() {
 
   this.route('user-profile', function() {
     this.route('trip-form');
+    this.route('edit-profile');
   });
 });
 

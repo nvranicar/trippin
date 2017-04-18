@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
 
       await changeset.save();
 
-      await this.get('session').authenticate('authenticator:token', {
+      await this.get('session').authenticate('authenticator:jwt', {
         identification: this.get('model.username'),
         password: this.get('model.password'),
       });
