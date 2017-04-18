@@ -1,69 +1,62 @@
-{{!-- <div class="section section--map"> --}}
-  {{!-- <div class="container"> --}}
-    {{!-- <div class="map"> --}}
-      {{!-- <h1 class="map__heading">Explore Through Others</h1> --}}
-      {{#leaflet-map lat=lat lng=lng zoom=zoom scrollWheelZoom=false minZoom=2.4 maxBounds=bounds}}
-          {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664" bounds=bounds}}
+{{#leaflet-map lat=lat lng=lng zoom=zoom scrollWheelZoom=false minZoom=2.4 maxBounds=bounds}}
+  {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664" bounds=bounds}}
 
-        {{#each data.trips as |trip|}}
-          {{#marker-layer location=trip.crd}}
-            {{#popup-layer}}
-              <div class="map-pic">
-                <button class="scrollBtn" {{action "scroll" trip}}>
+  {{#each model as |trip|}}
+    {{#marker-layer location=trip.crd}}
+      {{#popup-layer}}
+        <div class="map-pic">
+          <button class="scrollBtn" {{action "scroll" trip}}>
                   <h4 class="map-pic__location">{{trip.location}}</h4>
                 </button>
-                <p class="map-pic__user">by {{trip.user}}</p>
-                <img src={{trip.cover}} class="map-pic__pic">
-              </div>
-            {{/popup-layer}}
-          {{/marker-layer}}
-        {{/each}}
-      {{/leaflet-map}}
-    {{!-- </div> --}}
-  {{!-- </div> --}}
-{{!-- </div> --}}
+          <p class="map-pic__user">by {{trip.user}}</p>
+          <img src= {{trip.cover}} class="map-pic__pic">
+        </div>
+      {{/popup-layer}}
+    {{/marker-layer}}
+  {{/each}}
+{{/leaflet-map}}
 <div class="section section--index">
   <div class="container">
     <div class="trips">
       <h2 class="trips__heading">Share Your View</h2>
       <p>(click on a location's picture to view on map)</p>
       <div class="trip-wrapper">
-        {{#each data.trips as |trip|}}
-        <div class={{trip.id}}>
-          <div class="trip">
-            <div class="trip__cover">
-              <img src={{trip.cover}} class="trip__cover__pic">
-              <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.location}}</button>
-            </div>
-            <div class="trip__pics">
-              <p class="chevron"><span class="fa fa-chevron-left"></span></p>
-              <div class="pic-grid">
-                {{#if trip.pictures}}
-                {{#each trip.pictures as |pic|}}
-                <div class="pic-grid__item">
-                  <div class="pic-wrapper">
-                    <img src={{pic}} class="small-pic">
-                    <button class="modal-button" {{action "toggleModal"}}></button>
-                    <button class="favorite {{if (contains pic currentUser.favorites) "favorite--active"}}" {{action "favorite" pic}}> <span class="fa {{if (contains pic currentUser.favorites) "fa-star" "fa-star-o"}}"></span> </button>
-                  </div>
-                </div>
-                {{#if isShowingModal}}
-                  {{#modal-dialog close="toggleModal"}}
-                    <img src={{pic}}>
-                    <p>By {{trip.user}}</p>
-                  {{/modal-dialog}}
-                {{/if}}
-                {{/each}}
-                {{else}}
-                <div class="no-pics-wrapper">
-                  <p class="no-pics">No trips found for this location.</p>
-                </div>
-                {{/if}}
+        {{#each model as |trip|}}
+          <div class= {{trip.id}}>
+            <div class="trip">
+              <div class="trip__cover">
+                <img src= {{trip.cover}} class="trip__cover__pic">
+                <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.location}}</button>
               </div>
-              <p class="chevron"><span class="fa fa-chevron-right"></span></p>
+              <div class="trip__pics">
+                <p class="chevron"><span class="fa fa-chevron-left"></span></p>
+                <div class="pic-grid">
+                  {{#if trip.pictures}}
+                    {{#each trip.pictures as |pic|}}
+                      <div class="pic-grid__item">
+                        <div class="pic-wrapper">
+                          <img src= {{pic}} class="small-pic">
+                          <button class="modal-button" {{action "toggleModal"}}></button>
+                          <button class="favorite {{if (contains pic currentUser.favorites) "favorite--active"}}" {{action "favorite" pic}}> <span class="fa {{if (contains pic currentUser.favorites) "fa-star" "fa-star-o"}}"></span> </button>
+                        </div>
+                      </div>
+                      {{#if isShowingModal}}
+                        {{#modal-dialog close="toggleModal" }}
+                          <img src= {{pic}}>
+                          <p>By {{trip.user}}</p>
+                        {{/modal-dialog}}
+                      {{/if}}
+                    {{/each}}
+                  {{else}}
+                    <div class="no-pics-wrapper">
+                      <p class="no-pics">No trips found for this location.</p>
+                    </div>
+                  {{/if}}
+                </div>
+                <p class="chevron"><span class="fa fa-chevron-right"></span></p>
+              </div>
             </div>
           </div>
-        </div>
         {{/each}}
       </div>
     </div>
