@@ -1,0 +1,34 @@
+<div class="section section--edit-profile">
+  <div class="container">
+    <div class="flex-center">
+      <div class="card card--edit-profile">
+        <h3 class="card__title">Edit Profile</h3>
+        {{#with (changeset model) as |formValues|}}
+
+        <form {{action "updateProfile" formValues on="submit"}} class="form form--edit-profile">
+          <div class="card__content">
+            <label for="profile-pic">Profile Picture:</label>
+            {{file-upload type="file" class="input-padding"}}
+
+            <label for="Hometown">Hometown:</label>
+            {{input type="text" value=formValues.hometown class="input input__edit-profile"}}
+
+            <label for="Homestate">Homestate:</label>
+            {{input type="text" value=formValues.homestate class="input input__edit-profile"}}
+
+            <label for="Country">Country:</label>
+            {{input type="text" value=formValues.country class="input input__edit-profile"}}
+
+            <label for="Bio">Bio:</label>
+            <textarea name="name" rows="8" cols="80" value=formValues.bio class="input input__edit-profile"></textarea>
+          </div>
+          <div class="card__footer">
+            {{#link-to "user-profile" class="button button--back"}}Cancel{{/link-to}}
+            <button type="submit" class="button button--submit">Save</button>
+          </div>
+        </form>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+</div>

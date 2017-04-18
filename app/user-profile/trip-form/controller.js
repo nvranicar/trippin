@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
 
   actions: {
     async saveTrip(changeset) {
-      changeset.save();
+      await changeset.save();
 
       // debugger;
 
