@@ -2,7 +2,7 @@ import Ember from 'ember';
 import EmberUploader from 'ember-uploader';
 
 export default EmberUploader.FileField.extend({
-  multiple: true,
+  multiple: false,
   url: 'http://example.com/upload',
 
   filesDidChange (files) {
