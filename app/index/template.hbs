@@ -1,15 +1,10 @@
-<div class="section section--map">
-  <div class="container">
-    <div class="map">
-      <h1 class="map__heading">Explore Through Others</h1>
-      {{#leaflet-map lat=lat lng=lng zoom=zoom scrollWheelZoom=false minZoom=2 maxBounds=bounds}}
+{{!-- <div class="section section--map"> --}}
+  {{!-- <div class="container"> --}}
+    {{!-- <div class="map"> --}}
+      {{!-- <h1 class="map__heading">Explore Through Others</h1> --}}
+      {{#leaflet-map lat=lat lng=lng zoom=zoom scrollWheelZoom=false minZoom=2.4 maxBounds=bounds}}
           {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664" bounds=bounds}}
 
-        {{#marker-layer location=ironYard}}
-          {{#popup-layer}}
-            <img src="https://pbs.twimg.com/profile_images/552955646346145793/DKlUDGsR.png" alt="">
-          {{/popup-layer}}
-        {{/marker-layer}}
         {{#each data.trips as |trip|}}
           {{#marker-layer location=trip.crd}}
             {{#popup-layer}}
@@ -24,9 +19,9 @@
           {{/marker-layer}}
         {{/each}}
       {{/leaflet-map}}
-    </div>
-  </div>
-</div>
+    {{!-- </div> --}}
+  {{!-- </div> --}}
+{{!-- </div> --}}
 <div class="section section--index">
   <div class="container">
     <div class="trips">
@@ -39,7 +34,6 @@
             <div class="trip__cover">
               <img src={{trip.cover}} class="trip__cover__pic">
               <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.location}}</button>
-              {{!-- <button class="favorite" {{action "favorite" trip}}><span class="fa fa-star-o"></span></button> --}}
             </div>
             <div class="trip__pics">
               <p class="chevron"><span class="fa fa-chevron-left"></span></p>
@@ -49,8 +43,16 @@
                 <div class="pic-grid__item">
                   <div class="pic-wrapper">
                     <img src={{pic}} class="small-pic">
+                    <button class="modal-button" {{action "toggleModal"}}></button>
+                    <button class="favorite {{if (contains pic currentUser.favorites) "favorite--active"}}" {{action "favorite" pic}}> <span class="fa {{if (contains pic currentUser.favorites) "fa-star" "fa-star-o"}}"></span> </button>
                   </div>
                 </div>
+                {{#if isShowingModal}}
+                  {{#modal-dialog close="toggleModal"}}
+                    <img src={{pic}}>
+                    <p>By {{trip.user}}</p>
+                  {{/modal-dialog}}
+                {{/if}}
                 {{/each}}
                 {{else}}
                 <div class="no-pics-wrapper">

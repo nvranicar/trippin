@@ -110,10 +110,6 @@
   }
 }
 
-.pic-button:hover .favorite {
-  display: block;
-}
-
 .small-pic {
   max-width: 7rem;
   max-height: 7rem;
@@ -175,11 +171,11 @@
   }
 }
 
-.trip__cover:hover .favorite {
+.pic-wrapper:hover .favorite {
   color: $c-white;
 
   &:hover {
-    color: $c-favoriteHover;
+    color: $c-favorite;
   }
 }
 
@@ -187,11 +183,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   background: none;
   border: none;
   color: rgba(#fff,0);
-  transition: color 0.5s;
+  transition: color 1s;
   outline: none;
 
   &:hover {
@@ -199,7 +195,30 @@
   }
 }
 
+.favorite--active {
+  color: $c-white;
+}
 
 .trip__cover:hover .pic-button {
   background: none;
+}
+
+.modal-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
