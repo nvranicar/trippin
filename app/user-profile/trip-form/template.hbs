@@ -10,7 +10,7 @@
 
           {{!-- <label for="friends">Who are your travel buddies? (Optional)</label> {{input type="text" value=formValues.friends class="input input__log-trip"}} --}}
 
-          <label for="locations">Location(s):</label> {{input type="text" value=formValues.locations class="input input__log-trip"}}
+          <label for="locations">Location(s):</label> {{input type="text" value=formValues.location class="input input__log-trip"}}
 
           {{!-- <label for="dates">Date(s):</label>
           {{#basic-dropdown as |dropdown|}}
@@ -26,7 +26,8 @@
           <label for="details">Trip Details:</label>
           <textarea name="details" id="" cols="30" rows="10" value=formValues.details class="input input__log-trip"></textarea> --}}
 
-          <label for="add-photos">Add Photos:</label> {{file-upload type="file" id="file-field" class="input-padding" filesDidChange=(action (mut formValues.images))}}
+          <label for="add-photos">Add Cover Photo:</label> {{file-upload type="file" id="cover-field" class="input-padding" filesDidChange=(action (mut formValues.coverPhoto))}}
+          <label for="add-photos">Add Other Photo:</label> {{file-upload type="file" id="file-field" class="input-padding" multiple=true filesDidChange=(action (mut formValues.photos))}}
         </div>
         <div class="card__footer">
           {{#link-to "user-profile" class="button button--back"}}Cancel{{/link-to}}
