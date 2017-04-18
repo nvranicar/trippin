@@ -23,4 +23,12 @@ button.button, a.button {
       background: rgba($c-deepBlueLightened, 0.8);
     }
   }
+
+  &--edit-profile {
+    margin: 0 1rem;
+  }
+
+  &--log-trip {
+    margin: 0 1rem;
+  }
 }

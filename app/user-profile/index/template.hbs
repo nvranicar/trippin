@@ -1,15 +1,18 @@
-{{#link-to "user-profile.trip-form"}}
   <div class="flex-center">
-    <button class="button button--log-trip"><h1>Log a trip</h1></button>
-  </div>
-{{/link-to}}
+    {{#link-to "user-profile.trip-form"}}
+      <button class="button button--log-trip"><h1>Log a trip</h1></button>
+    {{/link-to}}
+    {{#link-to "user-profile.edit-profile"}}
+      <button class="button button--edit-profile"><h1>Edit Profile</h1></button>
+    {{/link-to}}
+</div>
 <div class="trip-wrapper">
   {{#each data.trips as |trip|}}
     <div class={{trip.id}}>
       <div class="trip">
         <div class="trip__cover">
           <img src={{trip.cover}} class="trip__cover__pic">
-          <button class="pic-button" {{action "zoomByLoc" trip}}>trip.name</button>
+          <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.name}}</button>
         </div>
         <div class="trip__pics">
           <p class="chevron"><span class="fa fa-chevron-left"></span></p>
