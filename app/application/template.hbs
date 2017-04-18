@@ -9,41 +9,17 @@
       </div>
       <div class="nav-right">
         <h4 class="login-buttons">
-            {{#if isAuthenticated}}
-            {{#link-to "user-profile"}}<span class="my-profile-link">My Profile</span>{{/link-to}}
-            <div class="dropdown">
-              <span class="fa fa-bars"></span>
-              <div class="dropdown-content">
-                <button class="logout" {{action "logout"}}>Logout</button>
+            {{#if session.isAuthenticated}}
+              {{#link-to "user-profile"}}<span class="my-profile-link">My Profile</span>{{/link-to}}
+              <button class="logout" {{action "logout"}}>Logout</button>
+              <div class="dropdown">
+                <span class="fa fa-bars"></span>
+                <div class="dropdown-content">
+                </div>
               </div>
-            </div>
-            {{!-- {{#burger-menu as |burger|}}
-              {{#burger.menu dismissOnItemClick=true itemTagName="li" as |menu|}}
-                <button {{action burger.state.actions.close}}>Close</button>
-
-                <ul>
-                  {{#menu.item}}
-                    {{#link-to 'index'}}
-                  {{/menu.item}}
-
-                  {{#menu.item}}
-                    {{#link-to 'user-profile'}}
-                  {{/menu.item}}
-
-                  {{#menu.item}}
-                    {{#link-to 'Logout' 'contact'}}
-                  {{/menu.item}}
-                </ul>
-              {{/burger.menu}}
-
-              {{#burger.outlet}}
-                <button {{action burger.state.actions.toggle}}>Menu</button>
-                {{outlet}}
-              {{/burger.outlet}}
-            {{/burger-menu}} --}}
             {{else}}
-            {{#link-to "register"}}<span class="register">Register</span>{{/link-to}}
-            {{#link-to "login"}}<span class="login">Login</span>{{/link-to}}
+              {{#link-to "register"}}<span class="register">Register</span>{{/link-to}}
+              {{#link-to "login"}}<span class="login">Login</span>{{/link-to}}
             {{/if}}
           </h4>
       </div>

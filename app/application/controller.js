@@ -1,10 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  isAuthenticated: true,
+  session: Ember.inject.service(),
+
   actions: {
     logout() {
-      this.isAuthenticated = false;
+      this.get('session').invalidate();
     }
   }
 });
