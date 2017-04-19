@@ -2,7 +2,7 @@
   {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664" bounds=bounds}}
 
   {{#each model as |trip|}}
-    {{#marker-layer location=trip.crd}}
+    {{!-- {{#marker-layer location=trip.crd}}
       {{#popup-layer}}
         <div class="map-pic">
           <button class="scrollBtn" {{action "scroll" trip}}>
@@ -12,7 +12,7 @@
           <img src= {{trip.cover}} class="map-pic__pic">
         </div>
       {{/popup-layer}}
-    {{/marker-layer}}
+    {{/marker-layer}} --}}
   {{/each}}
 {{/leaflet-map}}
 <div class="section section--index">
@@ -45,11 +45,13 @@
                     <img src="{{pic}}">
                     <p>By {{trip.user}}</p>
                   {{/modal-dialog}}
-                {{/if}}
+                  {{/if}}
                 {{/each}}
                 {{else}}
                 <div class="no-pics-wrapper">
                   <p class="no-pics">No trips found for this location.</p>
+                </div>
+                  {{/if}}
                 </div>
                 <p class="chevron"><span class="fa fa-chevron-right"></span></p>
               </div>
