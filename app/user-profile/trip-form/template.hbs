@@ -1,0 +1,40 @@
+<div class="section section--form">
+  <div class="container">
+    <div class="card card--log-trip">
+      <h2 class="card__title"> Log Your Trip </h2>
+      {{#with (changeset model) as |formValues|}}
+
+      <form {{action "saveTrip" formValues on="submit"}} class="form form--log-trip">
+        <div class="card__content">
+          <label for="name">What are you calling this trip?</label> {{input type="text" value=formValues.name class="input input__log-trip"}}
+
+          {{!-- <label for="friends">Who are your travel buddies? (Optional)</label> {{input type="text" value=formValues.friends class="input input__log-trip"}} --}}
+
+          <label for="locations">Location(s):</label> {{input type="text" value=formValues.location class="input input__log-trip"}}
+
+          {{!-- <label for="dates">Date(s):</label>
+          {{#basic-dropdown as |dropdown|}}
+            <input type="text" data-ebd-id="{{dropdown.uniqueId}}-trigger" class="input input__log-trip" onclick={{dropdown.actions.toggle}} value={{if formValues.dates (range-moment-format formValues.dates 'MM/DD/YYYY')}} readonly>
+
+            {{#dropdown.content class="datepicker-demo-dropdown" }}
+              {{#power-calendar-range class="demo-calendar-small" minRange=0 center=center onCenterChange=(action (mut center) value="date" ) selected=formValues.dates onSelect=(action (mut formValues.dates) value="date" ) as |calendar|}}
+                {{calendar.nav}}{{calendar.days}}
+              {{/power-calendar-range}}
+            {{/dropdown.content}}
+          {{/basic-dropdown}}
+
+          <label for="details">Trip Details:</label>
+          <textarea name="details" id="" cols="30" rows="10" value=formValues.details class="input input__log-trip"></textarea> --}}
+
+          <label for="add-photos">Add Cover Photo:</label> {{file-upload type="file" id="cover-field" class="input-padding" filesDidChange=(action (mut formValues.coverPhoto))}}
+          <label for="add-photos">Add Other Photo:</label> {{file-upload type="file" id="file-field" class="input-padding" multiple=true filesDidChange=(action (mut formValues.photos))}}
+        </div>
+        <div class="card__footer">
+          {{#link-to "user-profile" class="button button--back"}}Cancel{{/link-to}}
+          <button type="submit" class="button button--submit">Save</button>
+        </div>
+      </form>
+      {{/with}}
+    </div>
+  </div>
+</div>

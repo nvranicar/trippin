@@ -1,16 +1,21 @@
-@import "ember-cli-font-awesome-sass";
-
+@import 'ember-cli-font-awesome-sass';
+@import 'ember-basic-dropdown';
+@import 'ember-power-calendar';
+@import 'ember-modal-dialog/ember-modal-structure';
+@import 'ember-modal-dialog/ember-modal-appearance';
 
 $c-blue: rgb(68, 151, 232);
 $c-green: rgb(69,193,129);
 $c-deepGreen: darken($c-green, 15%);
 $c-greenLightened: lighten($c-green, 8);
 $c-cyan: rgb(109, 254, 255);
-$c-deepBlue: rgb(48,50,175);
+$c-deepBlue: rgb(1,17,75);
 $c-deepBlueLightened: lighten($c-deepBlue, 8);
 $c-lightGreen: rgb(155, 255, 150);
 $c-white: #fefefe;
-$c-shadow: rgba(#5b5b5b,.47);
+$c-text: rgb(61,61,61);
+$c-shadow: rgba(0, 0, 0, .2);
+$c-favorite: #f2e915;
 
 @import 'resets';
 @import 'layout';
@@ -22,24 +27,4 @@ $c-shadow: rgba(#5b5b5b,.47);
 @import 'navbar';
 
 @import 'home-page';
-
-.map-pic {
-  background: $c-shadow;
-  margin: -0.85rem -1.25rem;
-  border-radius: 0.75rem;
-  padding: 0.5rem;
-
-  > * + * {
-    margin-top: -1rem;
-  }
-
-  &__location {
-    margin: -0.4rem 0 -1rem;
-  }
-
-  &__pic {
-    border-radius: 0.5rem;
-    margin-bottom: -0.3rem;
-    width: 6rem;
-  }
-}
+@import 'user-info';

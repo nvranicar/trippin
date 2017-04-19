@@ -1,0 +1,39 @@
+  <div class="flex-center">
+    {{#link-to "user-profile.trip-form"}}
+      <button class="button button--log-trip"><h1>Log a trip</h1></button>
+    {{/link-to}}
+    {{#link-to "user-profile.edit-profile"}}
+      <button class="button button--edit-profile"><h1>Edit Profile</h1></button>
+    {{/link-to}}
+</div>
+<div class="trip-wrapper">
+  {{#each data.trips as |trip|}}
+    <div class={{trip.id}}>
+      <div class="trip">
+        <div class="trip__cover">
+          <img src={{trip.cover}} class="trip__cover__pic">
+          <button class="pic-button" {{action "zoomByLoc" trip}}>{{trip.name}}</button>
+        </div>
+        <div class="trip__pics">
+          <p class="chevron"><span class="fa fa-chevron-left"></span></p>
+          <div class="pic-grid">
+            {{#if trip.pictures}}
+              {{#each trip.pictures as |pic|}}
+                <div class="pic-grid__item">
+                  <div class="pic-wrapper">
+                    <img src={{pic}} class="small-pic">
+                  </div>
+                </div>
+              {{/each}}
+            {{else}}
+              <div class="no-pics-wrapper">
+                <p class="no-pics">No trips found for this location.</p>
+              </div>
+            {{/if}}
+          </div>
+          <p class="chevron"><span class="fa fa-chevron-right"></span></p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

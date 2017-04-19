@@ -1,20 +1,27 @@
 .map {
-  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.1rem $c-shadow;
+  background: rgb(129,120,111);
+  border-radius: 0.2rem;
+
 
   &__heading {
+    margin: 0;
+    padding-bottom: 1rem;
+    color: $c-white;
     text-align: center;
+    text-shadow: 0.2rem 0.2rem 0.1rem $c-shadow;
   }
 }
 
 .leaflet-container {
   height: 80vh;
   width: 100%;
-  box-shadow: 0.1rem 0.1rem 0.1rem $c-shadow;
+  box-shadow: -0.1rem -0.1rem 0.1rem 0;
 }
 
 .trips {
-  height: 100vh;
-  margin: 1rem;
+  height: 100%;
 
   &__heading {
     text-align: center;
@@ -25,12 +32,20 @@
   display: flex;
   padding: 0.5rem;
   box-shadow: 0.1rem 0.1rem 0.1rem $c-shadow;
-  background: rgba($c-blue, 0.3rem);
+  background: rgba($c-blue, 0.5);
   max-height: 16rem;
   width: 100%;
 
   &__cover {
-    width: 15rem;
+    max-width: 20rem;
+    position: relative;
+    height: 15rem;
+    cursor: pointer;
+
+    &__pic {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   &__pics {
@@ -46,12 +61,14 @@
   flex-direction: column;
   overflow: scroll;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
 
   &__item {
     height: calc(50% - 1rem);
+    max-width: 6rem;
+    min-width: 6rem;
     margin: 0.5rem;
-    flex-grow: 0;
+    overflow: hidden;
   }
 }
 
@@ -63,12 +80,33 @@
 
 .pic-wrapper {
   width: 100%;
+  height: 100%;
   position: relative;
 
   &:before {
     content: '';
     display: block;
     padding-top: 100%;
+  }
+}
+
+.pic-button {
+  background: rgba($c-deepBlue, 0.4);
+  border:none;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: $c-white;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  height: 100%;
+  transition: background 1s;
+
+  &:hover {
+    cursor: pointer;
   }
 }
 
@@ -84,12 +122,102 @@
   height: 100%;
 }
 
-.pic-button {
-  background: none;
-  border:none;
-  outline: none;
+.no-pics-wrapper {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .no-pics {
   text-align: center;
+}
+
+.leaflet-popup-content {
+  // width: auto !important;
+  min-width: 6rem;
+}
+
+.map-pic {
+  margin: -0.85rem -1.25rem;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+
+  > * + * {
+    margin-top: -1rem;
+  }
+
+  &__location {
+    margin: -0.4rem 0 -1rem;
+  }
+
+  &__pic {
+    border-radius: 0.5rem;
+    margin-bottom: -0.3rem;
+    width: 15rem;
+  }
+}
+
+.scrollBtn {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.pic-wrapper:hover .favorite {
+  color: $c-white;
+
+  &:hover {
+    color: $c-favorite;
+  }
+}
+
+.favorite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: rgba(#fff,0);
+  transition: color 1s;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.favorite--active {
+  color: $c-white;
+}
+
+.trip__cover:hover .pic-button {
+  background: none;
+}
+
+.modal-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }

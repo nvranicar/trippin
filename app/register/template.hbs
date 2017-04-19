@@ -1,24 +1,28 @@
-<div class="section section--register">
-  <div class="container">
-    <div class="flex-center">
-      <div class="card card--small">
-        <h1 class="card__title">
-          Start Trippin'
-        </h1>
-        {{#with (changeset model userValidator) as |formValues|}}
-        <form {{action "saveUser" formValues on="submit"}} class="form form--register">
-          <div class="card__content">
-            {{form-input changeset=formValues label="Username" property="username"}}
-            {{form-input changeset=formValues label="Email" property="email"}}
-            {{form-input type="password" changeset=formValues label="Password" property="password"}}
-          </div>
-          <div class="card__footer">
-            {{#link-to "index" class="button button--back"}}Back{{/link-to}}
-            <button class="button button--submit">Continue</button>
-          </div>
-        </form>
-        {{/with}}
+
+  <div class="section section--register">
+    <div class="container">
+      <div class="flex-center">
+        <div class="card card--small">
+          <h1 class="card__title">
+            Start Trippin'
+          </h1>
+          {{#with (changeset model userValidator) as |formValues|}}
+          <form {{action "saveUser" formValues on="submit"}} class="form form--register">
+            <div class="card__content">
+              {{form-input changeset=formValues label="Username" property="username"}}
+              {{form-input changeset=formValues label="Email" property="email"}}
+              {{form-input type="password" changeset=formValues label="Password" property="password"}}
+            </div>
+            <div class="card__footer">
+              {{#link-to "index" class="button button--back"}}Back{{/link-to}}
+              <button type="submit" class="button button--submit">Continue</button>
+            </div>
+          </form>
+          {{/with}}
+          <p>
+            Have an account? {{#link-to "login" class="text-blue"}}Sign in here!{{/link-to}}
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>

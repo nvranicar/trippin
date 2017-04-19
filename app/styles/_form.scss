@@ -16,10 +16,13 @@
   width: 100%;
   line-height: 1rem;
   font-size: 0.9rem;
-  color: #505050;
   transition: border-bottom-color linear 0.3s;
 
   &:focus {
     border-bottom-color: $c-deepBlue;
   }
+}
+
+.input-padding {
+  padding: 0.5rem 0;
 }

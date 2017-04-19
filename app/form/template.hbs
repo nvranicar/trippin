@@ -1,0 +1,35 @@
+{{!-- <div class="section section--form">
+  <div class="container">
+    <div class="card card--log-trip">
+      <h2 class="card__title">
+            Log Your Trip
+          </h2>
+      <form {{action "saveTrip" on="submit"}} class="form form--log-trip">
+        <div class="card__content">
+          <label for="name">What are you calling this trip?</label>
+          {{input type="text" value="formValues.name" class="input input__log-trip"}}
+
+          <label for="friends">Who are your travel buddies? (Optional)</label>
+          <input type="text" class="input input__log-trip">
+
+          <label for="locations">Location(s):</label>
+          <input type="text" class="input input__log-trip">
+
+          <label for="dates">Date(s):</label>
+          {{bootstrap-datepicker  autoclose=true value=startDate format='DD.MM.YYYY' class="form-control input input__log-trip"}}
+          {{startDate}}
+
+          <label for="details">Trip Details:</label>
+          <textarea name="details" id="" cols="30" rows="10" class="input input__log-trip"></textarea>
+
+          <label for="add-photos">Add Photos:</label>
+          <input type="file" class="input-padding">
+        </div>
+        <div class="card__footer">
+          {{#link-to "index" class="button button--back"}}Cancel{{/link-to}}
+          <button type="submit" class="button button--submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> --}}

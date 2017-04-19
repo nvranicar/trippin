@@ -3,6 +3,10 @@
 
 module.exports = function(environment) {
   let ENV = {
+    DS: {
+      host: 'http://localhost:8080',
+    },
+
     modulePrefix: 'trippin',
     environment,
     rootURL: '/',
@@ -46,6 +50,13 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:token'
+  };
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: `${ENV.DS.host}/login`,
+  };
 
   return ENV;
 };
