@@ -11,7 +11,7 @@
           <p class="user-info__title">Following X travelers</p> --}}
         </div>
       </div>
-      {{#leaflet-map maxBounds=bounds lat=lat lng=lng zoom=zoom scrollWheelZoom=false zoomAnimation=true minZoom=2}}
+      {{#leaflet-map maxBounds=bounds lat=lat lng=lng zoom=zoom scrollWheelZoom=false zoomAnimation=true minZoom=2 dragging=true}}
         {{tile-layer bounds=bounds url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664"}}
 
         {{#marker-layer location=ironYard}}
@@ -20,7 +20,7 @@
           {{/popup-layer}}
         {{/marker-layer}}
         {{#each data.trips as |trip|}}
-          {{#marker-layer location=trip.crd}}
+          {{!-- {{#marker-layer location=trip.}}
             {{#popup-layer}}
               <div class="map-pic">
                 <button class="scrollBtn" {{action "scroll" trip}}>
@@ -30,7 +30,7 @@
                 <img src= {{trip.cover}} class="map-pic__pic">
               </div>
             {{/popup-layer}}
-          {{/marker-layer}}
+          {{/marker-layer}} --}}
         {{/each}}
       {{/leaflet-map}}
     </div>

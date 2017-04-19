@@ -11,16 +11,16 @@ export default Ember.Controller.extend({
   data,
   scroller: Ember.inject.service(),
 
+
   actions: {
-     zoomByLoc(trip) {
+    zoomByLoc(trip) {
        Ember.set(this, 'zoom', 6);
-       Ember.set(this, 'lat', trip.crd[0]);
-       Ember.set(this, 'lng', trip.crd[1]);
-feature/home-page
+       Ember.set(this, 'lat', trip.lat);
+       Ember.set(this, 'lng', trip.lng);
        this.get('scroller').scrollVertical('.map');
     },
     scroll(trip) {
       this.get('scroller').scrollVertical(`.${trip.id}`);
-    }
+    },
   }
 });

@@ -7,6 +7,10 @@ module.exports = function(environment) {
       host: 'http://localhost:8080',
     },
 
+    google: {
+      apiKey: process.env.GOOGLE_API_KEY,
+    },
+
     modulePrefix: 'trippin',
     environment,
     rootURL: '/',
