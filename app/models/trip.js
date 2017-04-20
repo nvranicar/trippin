@@ -7,4 +7,6 @@ export default DS.Model.extend({
   location: DS.attr('string'),
   locations: DS.hasMany('locations'),
   pictures: DS.hasMany('picture'),
+  lat: DS.attr('number'),
+  lng: DS.attr('number')
 });

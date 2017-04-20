@@ -122,7 +122,6 @@
   height: 100%;
 }
 
-
 .no-pics-wrapper {
   flex-basis: 100%;
   display: flex;
@@ -137,12 +136,14 @@
 .leaflet-popup-content {
   // width: auto !important;
   min-width: 6rem;
+  min-height: 6rem;
 }
 
 .map-pic {
   margin: -0.85rem -1.25rem;
   border-radius: 0.75rem;
   padding: 0.5rem;
+  max-height: 100%;
 
   > * + * {
     margin-top: -1rem;
@@ -156,6 +157,7 @@
     border-radius: 0.5rem;
     margin-bottom: -0.3rem;
     width: 15rem;
+    max-height: 100%;
   }
 }
 

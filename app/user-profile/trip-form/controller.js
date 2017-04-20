@@ -18,10 +18,16 @@ export default Ember.Controller.extend({
 
       // debugger;
 
-      const fetch = this.get('filesystem.fetch');
+      const ffetch = this.get('filesystem.fetch');
       const token = this.get('session.session.content.authenticated.token');
+      const apiKey = config.google.apiKey;
 
-      fetch(apiUrl, {
+      const { results : [googleResult] }= await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.model.location}&key=${apiKey}`)
+        .then(r => r.json());
+
+      const {lat, lng} = googleResult.geometry.location;
+
+      ffetch(apiUrl, {
         method: 'POST',
         headers: {
           accept: 'application/json',
@@ -32,6 +38,8 @@ export default Ember.Controller.extend({
           location: this.model.location,
           'cover-photo': this.model.coverPhoto[0],
           'photos[]': Array.from(this.model.photos),
+          lat: lat,
+          lng: lng,
         }
       }).then(res => res.json()).then((data) => {
         const upload = this.store.pushPayload(data);
