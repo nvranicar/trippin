@@ -10,11 +10,4 @@ export default function(){
     this.use('toDown'),
     this.reverse('toUp')
   );
-
-  // this.transition(
-  //   this.fromRoute('register'),
-  //   this.toRoute('login'),
-  //   this.use('crossfade'),
-  //   this.reverse('crossfade'),
-  // );
 }

@@ -20,7 +20,7 @@
           {{/popup-layer}}
         {{/marker-layer}}
         {{#each data.trips as |trip|}}
-          {{#marker-layer location=trip.crd}}
+          {{#marker-layer location=[lat, lng] draggable=true}}
             {{#popup-layer}}
               <div class="map-pic">
                 <button class="scrollBtn" {{action "scroll" trip}}>
