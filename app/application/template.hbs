@@ -10,13 +10,13 @@
       <div class="nav-right">
         <h4 class="login-buttons">
             {{#if session.isAuthenticated}}
-              {{#link-to "user-profile"}}<span class="my-profile-link">My Profile</span>{{/link-to}}
-              <button class="logout" {{action "logout"}}>Logout</button>
-              <div class="dropdown">
+              {{#link-to "user-profile" class="button button--my-profile"}}My Profile{{/link-to}}
+              <button class="button button--logout" {{action "logout"}}>Logout</button>
+              {{!-- <div class="dropdown">
                 <span class="fa fa-bars"></span>
                 <div class="dropdown-content">
                 </div>
-              </div>
+              </div> --}}
             {{else}}
               {{#link-to "register"}}<span class="register">Register</span>{{/link-to}}
               {{#link-to "login"}}<span class="login">Login</span>{{/link-to}}
