@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import data from './data';
 
+const { inject: { service }, Component } = Ember;
+
 export default Ember.Controller.extend({
   lat: 38.82259097617713,
   lng: 9.140625000000002,
@@ -10,6 +12,8 @@ export default Ember.Controller.extend({
   bounds: [[-89.98155760646617, -200], [89.99346179538875, 200]],
   data,
   scroller: Ember.inject.service(),
+  session: service('session'),
+  currentUser: service('current-user'),
 
 
   actions: {
