@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  currentUser: Ember.inject.service(),
+
   model() {
-    // return this.store.findRecord('user', 'currentId');
+    return this.get('currentUser').load();
   }
 });
