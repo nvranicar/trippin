@@ -1,0 +1,17 @@
+{{#leaflet-map lat=lat lng=lng zoom=zoom scrollWheelZoom=false minZoom=2.4 maxBounds=bounds}}
+  {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664" bounds=bounds}}
+
+  {{#each trips as |trip|}}
+    {{#marker-layer lat=trip.lat lng=trip.lng}}
+      {{#popup-layer}}
+        <div class="map-pic">
+          {{!-- <button class="scrollBtn" {{action "scroll" trip}}> --}}
+            <h4 class="map-pic__location">{{trip.location}}</h4>
+          {{!-- </button> --}}
+          {{!-- <p class="map-pic__user">by {{trip.user}}</p> --}}
+          <img src= {{trip.photoUrl}} class="map-pic__pic">
+        </div>
+      {{/popup-layer}}
+    {{/marker-layer}}
+  {{/each}}
+{{/leaflet-map}}

@@ -1,20 +1,5 @@
-{{#leaflet-map lat=lat lng=lng zoom=zoom scrollWheelZoom=false minZoom=2.4 maxBounds=bounds}}
-  {{tile-layer url="https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=1d96d3945c5340ea9bee6e79ba94b664" bounds=bounds}}
+{{trip-map trips=model}}
 
-  {{#each model as |trip|}}
-    {{#marker-layer lat=trip.lat lng=trip.lng}}
-      {{#popup-layer}}
-        <div class="map-pic">
-          {{!-- <button class="scrollBtn" {{action "scroll" trip}}> --}}
-            <h4 class="map-pic__location">{{trip.location}}</h4>
-          {{!-- </button> --}}
-          {{!-- <p class="map-pic__user">by {{trip.user}}</p> --}}
-          <img src= {{trip.photoUrl}} class="map-pic__pic">
-        </div>
-      {{/popup-layer}}
-    {{/marker-layer}}
-  {{/each}}
-{{/leaflet-map}}
 <div class="section section--index">
   <div class="container">
     <div class="trips">
@@ -36,8 +21,8 @@
                 <div class="pic-grid__item">
                   <div class="pic-wrapper">
                     <img src="{{pic}}" class="small-pic">
-                    <button class="modal-button" {{action "toggleModal"}}></button>
-                    <button class="favorite {{if (contains pic currentUser.favorites) "favorite--active"}}" {{action "favorite" pic}}> <span class="fa {{if (contains pic currentUser.favorites) "fa-star" "fa-star-o"}}"></span> </button>
+                    {{!-- <button class="modal-button" {{action "toggleModal"}}></button>
+                    <button class="favorite {{if (contains pic currentUser.favorites) "favorite--active"}}" {{action "favorite" pic}}> <span class="fa {{if (contains pic currentUser.favorites) "fa-star" "fa-star-o"}}"></span> </button> --}}
                   </div>
                 </div>
                 {{#if isShowingModal}}
@@ -49,7 +34,7 @@
                 {{/each}}
                 {{else}}
                 <div class="no-pics-wrapper">
-                  <p class="no-pics">No trips found for this location.</p>
+                  <p class="no-pics">No photos found for this trip.</p>
                 </div>
                   {{/if}}
                 </div>
