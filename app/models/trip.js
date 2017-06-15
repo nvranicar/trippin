@@ -8,5 +8,6 @@ export default DS.Model.extend({
   locations: DS.hasMany('locations'),
   pictures: DS.hasMany('picture'),
   lat: DS.attr('number'),
-  lng: DS.attr('number')
+  lng: DS.attr('number'),
+  user: DS.attr()
 });
